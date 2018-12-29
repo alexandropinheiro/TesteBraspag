@@ -1,0 +1,9 @@
+C:\Projetos\Braspag\Dominio\bin\Debug\netcoreapp2.1\Dominio.deps.json
+C:\Projetos\Braspag\Dominio\bin\Debug\netcoreapp2.1\Dominio.dll
+C:\Projetos\Braspag\Dominio\obj\Debug\netcoreapp2.1\Dominio.csprojAssemblyReference.cache
+C:\Projetos\Braspag\Dominio\obj\Debug\netcoreapp2.1\Dominio.csproj.CoreCompileInputs.cache
+C:\Projetos\Braspag\Dominio\obj\Debug\netcoreapp2.1\Dominio.AssemblyInfoInputs.cache
+C:\Projetos\Braspag\Dominio\obj\Debug\netcoreapp2.1\Dominio.AssemblyInfo.cs
+C:\Projetos\Braspag\Dominio\bin\Debug\netcoreapp2.1\Dominio.pdb
+C:\Projetos\Braspag\Dominio\obj\Debug\netcoreapp2.1\Dominio.dll
+C:\Projetos\Braspag\Dominio\obj\Debug\netcoreapp2.1\Dominio.pdb

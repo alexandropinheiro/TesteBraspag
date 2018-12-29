@@ -1,0 +1,12 @@
+C:\Projetos\Braspag\Servico\bin\Debug\netcoreapp2.1\Servico.deps.json
+C:\Projetos\Braspag\Servico\bin\Debug\netcoreapp2.1\Servico.dll
+C:\Projetos\Braspag\Servico\bin\Debug\netcoreapp2.1\Servico.pdb
+C:\Projetos\Braspag\Servico\bin\Debug\netcoreapp2.1\Dominio.dll
+C:\Projetos\Braspag\Servico\bin\Debug\netcoreapp2.1\Dominio.pdb
+C:\Projetos\Braspag\Servico\obj\Debug\netcoreapp2.1\Servico.csprojAssemblyReference.cache
+C:\Projetos\Braspag\Servico\obj\Debug\netcoreapp2.1\Servico.csproj.CoreCompileInputs.cache
+C:\Projetos\Braspag\Servico\obj\Debug\netcoreapp2.1\Servico.AssemblyInfoInputs.cache
+C:\Projetos\Braspag\Servico\obj\Debug\netcoreapp2.1\Servico.AssemblyInfo.cs
+C:\Projetos\Braspag\Servico\obj\Debug\netcoreapp2.1\Servico.csproj.CopyComplete
+C:\Projetos\Braspag\Servico\obj\Debug\netcoreapp2.1\Servico.dll
+C:\Projetos\Braspag\Servico\obj\Debug\netcoreapp2.1\Servico.pdb

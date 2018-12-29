@@ -1,0 +1,14 @@
+C:\Projetos\Braspag\Ioc\bin\Debug\netcoreapp2.1\Ioc.deps.json
+C:\Projetos\Braspag\Ioc\bin\Debug\netcoreapp2.1\Ioc.dll
+C:\Projetos\Braspag\Ioc\obj\Debug\netcoreapp2.1\Ioc.csproj.CoreCompileInputs.cache
+C:\Projetos\Braspag\Ioc\obj\Debug\netcoreapp2.1\Ioc.AssemblyInfoInputs.cache
+C:\Projetos\Braspag\Ioc\obj\Debug\netcoreapp2.1\Ioc.AssemblyInfo.cs
+C:\Projetos\Braspag\Ioc\obj\Debug\netcoreapp2.1\Ioc.csprojAssemblyReference.cache
+C:\Projetos\Braspag\Ioc\bin\Debug\netcoreapp2.1\Ioc.pdb
+C:\Projetos\Braspag\Ioc\bin\Debug\netcoreapp2.1\Dominio.dll
+C:\Projetos\Braspag\Ioc\bin\Debug\netcoreapp2.1\Infra.dll
+C:\Projetos\Braspag\Ioc\bin\Debug\netcoreapp2.1\Dominio.pdb
+C:\Projetos\Braspag\Ioc\bin\Debug\netcoreapp2.1\Infra.pdb
+C:\Projetos\Braspag\Ioc\obj\Debug\netcoreapp2.1\Ioc.csproj.CopyComplete
+C:\Projetos\Braspag\Ioc\obj\Debug\netcoreapp2.1\Ioc.dll
+C:\Projetos\Braspag\Ioc\obj\Debug\netcoreapp2.1\Ioc.pdb
