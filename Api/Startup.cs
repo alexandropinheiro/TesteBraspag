@@ -37,7 +37,7 @@ namespace Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -52,6 +52,8 @@ namespace Api
                 c.RoutePrefix = "swagger";
                 c.SwaggerEndpoint("v1/swagger.json", "Webapi v1");
             });
+
+            loggerFactory.AddLog4Net("log4net.config");
         }
     }
 }

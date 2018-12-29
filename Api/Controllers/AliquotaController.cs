@@ -28,7 +28,7 @@ namespace Api.Controllers
             _aliquotaRepository.Atualizar(aliquota);
             _unitOfWork.Commit();
 
-            return Ok();
+            return Ok("Atualização realizada com sucesso!");
         }
     }
 }

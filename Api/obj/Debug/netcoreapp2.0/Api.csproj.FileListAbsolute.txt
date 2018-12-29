@@ -17,3 +17,4 @@ C:\Projetos\Braspag\Api\bin\Debug\netcoreapp2.0\Dominio.pdb
 C:\Projetos\Braspag\Api\bin\Debug\netcoreapp2.0\Infra.pdb
 C:\Projetos\Braspag\Api\obj\Debug\netcoreapp2.0\Api.csproj.CopyComplete
 C:\Projetos\Braspag\Api\bin\Debug\netcoreapp2.0\Api.xml
+C:\Projetos\Braspag\Api\bin\Debug\netcoreapp2.0\log4net.config
