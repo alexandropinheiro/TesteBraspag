@@ -23,46 +23,60 @@ namespace Api.Controllers
         [Route("CalcularValores")]
         public IActionResult CalcularValores([FromBody]DadosTransacaoViewModel dadosTransacaoViewModel)
         {
-            var transacaoFactory = new TransacaoFactory(dadosTransacaoViewModel.ValorTransacao, DateTime.Now);
-            var transacao = transacaoFactory.Criar();
+            try
+            {
+                var transacaoFactory = new TransacaoFactory(dadosTransacaoViewModel.ValorTransacao);
+                var transacao = transacaoFactory.Criar();
 
-            var aliquota = _aliquotaRepository.ObterPorAdquirenteBandeira(dadosTransacaoViewModel.IdBandeira, dadosTransacaoViewModel.IdAdquirente);
+                var aliquota = _aliquotaRepository.ObterPorAdquirenteBandeira(dadosTransacaoViewModel.IdBandeira, dadosTransacaoViewModel.IdAdquirente);
 
-            transacao.CriarItem(aliquota, 
-                                dadosTransacaoViewModel.NumeroCartao,
-                                dadosTransacaoViewModel.ValidadeCartao,
-                                dadosTransacaoViewModel.CvvCartao,
-                                dadosTransacaoViewModel.ValorCartao);
+                transacao.CriarItem(aliquota,
+                                    dadosTransacaoViewModel.NumeroCartao,
+                                    dadosTransacaoViewModel.ValidadeCartao,
+                                    dadosTransacaoViewModel.CvvCartao,
+                                    dadosTransacaoViewModel.ValorCartao);
 
-            var itemTransacao = transacao.Transacoes.FirstOrDefault();
+                var itemTransacao = transacao.Transacoes.FirstOrDefault();
 
-            return Ok(itemTransacao.DescricaoRetorno);
+                return Ok(itemTransacao.DescricaoRetorno);
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         [HttpPost]
         [Route("CalcularValoresListaCartoes")]
         public IActionResult CalcularValoresListaCartoes([FromBody]List<DadosTransacaoViewModel> dadosTransacaoViewModel)
         {
-            var valorTransacao = dadosTransacaoViewModel.Sum(x => x.ValorCartao);
+            try
+            {
+                var valorTransacao = dadosTransacaoViewModel.Sum(x => x.ValorCartao);
 
-            var transacaoFactory = new TransacaoFactory(valorTransacao, DateTime.Now);
-            var transacao = transacaoFactory.Criar();
+                var transacaoFactory = new TransacaoFactory(valorTransacao);
+                var transacao = transacaoFactory.Criar();
 
-            dadosTransacaoViewModel.ForEach(
-                x => 
-                    transacao.CriarItem(_aliquotaRepository.ObterPorAdquirenteBandeira(x.IdBandeira, x.IdAdquirente),
-                                        x.NumeroCartao,
-                                        x.ValidadeCartao,
-                                        x.CvvCartao,
-                                        x.ValorCartao)
-            );
+                dadosTransacaoViewModel.ForEach(
+                    x =>
+                        transacao.CriarItem(_aliquotaRepository.ObterPorAdquirenteBandeira(x.IdBandeira, x.IdAdquirente),
+                                            x.NumeroCartao,
+                                            x.ValidadeCartao,
+                                            x.CvvCartao,
+                                            x.ValorCartao)
+                );
 
-            var retorno = new List<string>();
+                var retorno = new List<string>();
 
-            foreach (var item in transacao.Transacoes)
-                retorno.Add(item.DescricaoRetorno);
+                foreach (var item in transacao.Transacoes)
+                    retorno.Add(item.DescricaoRetorno);
 
-            return Ok(retorno);
+                return Ok(retorno);
+            }catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
     }
 }

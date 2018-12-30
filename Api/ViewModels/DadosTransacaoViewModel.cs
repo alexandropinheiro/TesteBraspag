@@ -10,7 +10,7 @@ namespace Api.ViewModels
         public Guid IdAdquirente { get; set; }
 
         public string NumeroCartao { get; set; }
-        public DateTime ValidadeCartao { get; set; }
+        public string ValidadeCartao { get; set; }
         public string CvvCartao { get; set; }
         public decimal ValorCartao { get; set; }
     }

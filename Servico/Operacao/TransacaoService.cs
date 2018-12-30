@@ -21,7 +21,7 @@ namespace Servico.Operacao
             foreach (var item in transacao.Transacoes)
             {
                 var aliquota = _aliquotaRepository.ObterPorAdquirenteBandeira(idBandeira, idAdquirente);
-                item.Aliquota = aliquota;
+                item.Taxa = aliquota;
             }
         }
     }

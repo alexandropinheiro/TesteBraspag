@@ -14,7 +14,7 @@ namespace Infra.Mapping
             builder.Property(t => t.IdTransacao)
                 .IsRequired();
 
-            builder.Property(t => t.IdAliquota)
+            builder.Property(t => t.IdTaxa)
                 .IsRequired();
 
             builder.Property(t => t.Valor)
@@ -26,9 +26,9 @@ namespace Infra.Mapping
                 .WithMany(t => t.Transacoes)
                 .HasForeignKey(it => it.IdTransacao);
 
-            builder.HasOne(it => it.Aliquota)
+            builder.HasOne(it => it.Taxa)
                 .WithMany(a => a.Transacoes)
-                .HasForeignKey(it => it.IdAliquota);
+                .HasForeignKey(it => it.IdTaxa);
 
         }
     }

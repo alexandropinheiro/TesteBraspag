@@ -2,6 +2,7 @@
 using Dominio;
 using Dominio.Aliquota;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Api.Controllers
 {
@@ -22,11 +23,18 @@ namespace Api.Controllers
         [Route("atualizar")]
         public IActionResult AtualizarAliquota([FromBody]AliquotaViewModel aliquotaViewModel)
         {
-            var aliquota = _aliquotaRepository.ObterPorId(aliquotaViewModel.Id);
-            aliquota.Percentual = aliquotaViewModel.Taxa;
+            try
+            {
+                var aliquota = _aliquotaRepository.ObterPorId(aliquotaViewModel.Id);
+                aliquota.Percentual = aliquotaViewModel.Taxa;
+                
+                _aliquotaRepository.Atualizar(aliquota);
+                _unitOfWork.Commit();
 
-            _aliquotaRepository.Atualizar(aliquota);
-            _unitOfWork.Commit();
+            }catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
 
             return Ok("Atualização realizada com sucesso!");
         }

@@ -19,7 +19,7 @@ namespace Infra.Mapping
         private static readonly Adquirente _adquirenteElo = new Adquirente { Id = Guid.NewGuid(), Nome = "Elo" };
         #endregion
         
-        private static List<Bandeira> Bandeiras()
+        public static List<Bandeira> Bandeiras()
         {
             return new List<Bandeira>
             {
@@ -29,7 +29,7 @@ namespace Infra.Mapping
             };
         }
 
-        private static List<Adquirente> Adquirentes()
+        public static List<Adquirente> Adquirentes()
         {
             return new List<Adquirente>
             {
@@ -39,7 +39,7 @@ namespace Infra.Mapping
             };
         }
 
-        private static List<Taxa> Taxas()
+        public static List<Taxa> Taxas()
         {
             return new List<Taxa> {
                 new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteVisa.Id, IdBandeira = _bandeiraCielo.Id, Percentual = Convert.ToDecimal(0.03) },
