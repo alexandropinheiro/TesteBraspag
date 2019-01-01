@@ -25,13 +25,13 @@ namespace Teste.Repository
         {
             // 1 - Recuperar 1 taxa
             var taxa = _repository.ObterTodos().FirstOrDefault();
-            taxa.Percentual = Convert.ToDecimal(0.89);
+            taxa.Percentual = Convert.ToDecimal(0.0089);
             var id = taxa.Id;
 
             _repository.Atualizar(taxa);
             _uow.Commit();
 
-            Assert.Equal(Convert.ToDecimal(0.89), _repository.ObterPorId(id).Percentual);
+            Assert.Equal(Convert.ToDecimal(0.0089), _repository.ObterPorId(id).Percentual);
         }
 
         public void Dispose()
