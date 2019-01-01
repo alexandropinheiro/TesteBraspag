@@ -8,12 +8,12 @@ namespace Api.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
-    public class AliquotaController : Controller
+    public class TaxaController : Controller
     {
-        private readonly IAliquotaRepository _aliquotaRepository;
+        private readonly ITaxaRepository _aliquotaRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public AliquotaController(IAliquotaRepository aliquotaRepository, IUnitOfWork unitOfWork)
+        public TaxaController(ITaxaRepository aliquotaRepository, IUnitOfWork unitOfWork)
         {
             _aliquotaRepository = aliquotaRepository;
             _unitOfWork = unitOfWork;
@@ -21,7 +21,7 @@ namespace Api.Controllers
 
         [HttpPut]
         [Route("atualizar")]
-        public IActionResult AtualizarAliquota([FromBody]AliquotaViewModel aliquotaViewModel)
+        public IActionResult AtualizarAliquota([FromBody]TaxaViewModel aliquotaViewModel)
         {
             try
             {

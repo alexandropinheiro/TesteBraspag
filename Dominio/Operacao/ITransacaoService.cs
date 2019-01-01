@@ -6,6 +6,6 @@ namespace Dominio.Operacao
 {
     public interface ITransacaoService
     {
-        void ObterAliquotasParaAsTransacoes(Transacao transacao, Guid idBandeira, Guid idAdquirente);
+        void ObterTaxaParaAsTransacoes(Transacao transacao, Guid idBandeira, Guid idAdquirente);
     }
 }

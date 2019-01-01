@@ -3,7 +3,7 @@ using System;
 
 namespace Dominio.Aliquota
 {
-    public interface IAliquotaRepository : IRepositoryBase<Taxa>
+    public interface ITaxaRepository : IRepositoryBase<Taxa>
     {
         Taxa ObterPorAdquirenteBandeira(Guid idBandeira, Guid idAdquirente);
     }

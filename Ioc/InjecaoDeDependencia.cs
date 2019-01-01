@@ -13,7 +13,7 @@ namespace Ioc
         public static void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IAliquotaRepository, AliquotaRepository>();
+            services.AddScoped<ITaxaRepository, TaxaRepository>();
             services.AddScoped<ITransacaoRepository, TransacaoRepository>();
             services.AddScoped<Contexto>();
         }

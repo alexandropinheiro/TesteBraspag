@@ -6,17 +6,17 @@ namespace Servico.Operacao
 {
     public class TransacaoService : ITransacaoService
     {
-        private readonly IAliquotaRepository _aliquotaRepository;
+        private readonly ITaxaRepository _aliquotaRepository;
         private readonly ITransacaoRepository _transacaoRepository;
 
-        public TransacaoService(IAliquotaRepository aliquotaRepository,
+        public TransacaoService(ITaxaRepository aliquotaRepository,
                                 ITransacaoRepository transacaoRepository)
         {
             _aliquotaRepository = aliquotaRepository;
             _transacaoRepository = transacaoRepository;
         }
 
-        public void ObterAliquotasParaAsTransacoes(Transacao transacao, Guid idBandeira, Guid idAdquirente)
+        public void ObterTaxaParaAsTransacoes(Transacao transacao, Guid idBandeira, Guid idAdquirente)
         {
             foreach (var item in transacao.Transacoes)
             {

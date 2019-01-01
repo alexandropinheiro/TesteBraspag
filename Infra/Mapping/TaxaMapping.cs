@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infra.Mapping
 {
-    public class AliquotaMapping : EntityTypeConfiguration<Taxa>
+    public class TaxaMapping : EntityTypeConfiguration<Taxa>
     {
         public override void Map(EntityTypeBuilder<Taxa> builder)
         {

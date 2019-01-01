@@ -12,9 +12,9 @@ namespace Api.Controllers
     [Route("api/[controller]")]
     public class TransacaoController : Controller
     {
-        private readonly IAliquotaRepository _aliquotaRepository;
+        private readonly ITaxaRepository _aliquotaRepository;
 
-        public TransacaoController(IAliquotaRepository aliquotaRepository)
+        public TransacaoController(ITaxaRepository aliquotaRepository)
         {
             _aliquotaRepository = aliquotaRepository;
         }

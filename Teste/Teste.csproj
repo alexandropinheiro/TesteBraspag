@@ -18,8 +18,13 @@
 
   <ItemGroup>
     <Folder Include="Service\" />
-    <Folder Include="Repository\" />
     <Folder Include="Setup\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

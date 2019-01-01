@@ -29,7 +29,7 @@ namespace Infra.Context
         {
             modelBuilder.AddConfiguration(new BandeiraMapping());
             modelBuilder.AddConfiguration(new AdquirenteMapping());
-            modelBuilder.AddConfiguration(new AliquotaMapping());
+            modelBuilder.AddConfiguration(new TaxaMapping());
             modelBuilder.AddConfiguration(new TransacaoMapping());
             modelBuilder.AddConfiguration(new ItemTransacaoMapping());
 

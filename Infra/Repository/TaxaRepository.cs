@@ -5,11 +5,11 @@ using Infra.Context;
 
 namespace Infra.Repository
 {
-    public class AliquotaRepository : Repository<Taxa>, IAliquotaRepository
+    public class TaxaRepository : Repository<Taxa>, ITaxaRepository
     {
         protected Contexto _contexto { get; set; }
 
-        public AliquotaRepository(Contexto contexto) : base(contexto)
+        public TaxaRepository(Contexto contexto) : base(contexto)
         {
             _contexto = base._contexto;
         }

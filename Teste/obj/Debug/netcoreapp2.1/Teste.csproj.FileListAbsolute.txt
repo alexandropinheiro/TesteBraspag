@@ -17,3 +17,4 @@ C:\Projetos\Braspag\Teste\bin\Debug\netcoreapp2.1\Dominio.pdb
 C:\Projetos\Braspag\Teste\obj\Debug\netcoreapp2.1\Teste.csproj.CopyComplete
 C:\Projetos\Braspag\Teste\obj\Debug\netcoreapp2.1\Teste.dll
 C:\Projetos\Braspag\Teste\obj\Debug\netcoreapp2.1\Teste.pdb
+C:\Projetos\Braspag\Teste\bin\Debug\netcoreapp2.1\appsettings.development.json

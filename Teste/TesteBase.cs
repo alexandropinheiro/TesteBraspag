@@ -4,7 +4,7 @@ using PDV.Testes.Setup;
 
 namespace Teste
 {
-    public class TesteNBase
+    public class TesteBase
     {
         protected Contexto Contexto;
         protected IDatabaseInitializer databaseInitializer;
