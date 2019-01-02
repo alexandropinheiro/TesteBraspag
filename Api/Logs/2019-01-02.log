@@ -1,0 +1,382 @@
+2019-01-02 01:34:32,924 [9] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/values   
+ 
+2019-01-02 01:34:32,924 [8] INFO  Request starting HTTP/1.1 DEBUG http://localhost:53058/  0 
+ 
+2019-01-02 01:34:33,079 [8] INFO  Request finished in 295.223ms 200  
+ 
+2019-01-02 01:34:33,609 [9] INFO  Request finished in 765.0995ms 404  
+ 
+2019-01-02 01:34:54,518 [10] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/login application/json 65 
+ 
+2019-01-02 01:34:54,595 [10] INFO  Request finished in 67.9009ms 404  
+ 
+2019-01-02 01:35:32,907 [9] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/acount application/json 65 
+ 
+2019-01-02 01:37:39,771 [8] INFO  Request starting HTTP/1.1 DEBUG http://localhost:53058/  0 
+ 
+2019-01-02 01:37:39,771 [9] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/values   
+ 
+2019-01-02 01:37:39,884 [8] INFO  Request finished in 221.6551ms 200  
+ 
+2019-01-02 01:37:40,272 [9] INFO  Request finished in 616.6708ms 404  
+ 
+2019-01-02 01:37:46,286 [9] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/acount application/json 65 
+ 
+2019-01-02 01:37:48,940 [9] INFO  Executing action method Api.Controllers.AcountController.Post (Api) with arguments (Api.AuthenticateUtils.User, Microsoft.AspNetCore.Identity.UserManager`1[Api.Models.ApplicationUser], Microsoft.AspNetCore.Identity.SignInManager`1[Api.Models.ApplicationUser], Api.AuthenticateUtils.TokenConfigurations) - ModelState is Valid 
+ 
+2019-01-02 01:37:50,212 [9] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-02 01:37:52,226 [8] INFO  Executed DbCommand (308ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+ 
+2019-01-02 01:37:52,722 [11] INFO  Executed DbCommand (25ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 01:37:52,820 [10] INFO  Executed DbCommand (14ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 01:37:52,836 [9] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-02 01:37:52,926 [9] INFO  Executed action Api.Controllers.AcountController.Post (Api) in 6424.5453ms 
+ 
+2019-01-02 01:37:52,951 [9] INFO  Request finished in 6658.6256ms 200 application/json; charset=utf-8 
+ 
+2019-01-02 01:38:45,541 [9] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/acount application/json 65 
+ 
+2019-01-02 01:38:45,562 [9] INFO  Executing action method Api.Controllers.AcountController.Post (Api) with arguments (Api.AuthenticateUtils.User, Microsoft.AspNetCore.Identity.UserManager`1[Api.Models.ApplicationUser], Microsoft.AspNetCore.Identity.SignInManager`1[Api.Models.ApplicationUser], Api.AuthenticateUtils.TokenConfigurations) - ModelState is Valid 
+ 
+2019-01-02 01:39:04,607 [9] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-02 01:39:04,667 [22] INFO  Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+ 
+2019-01-02 01:39:23,571 [10] INFO  Executed DbCommand (45ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 01:39:23,584 [10] INFO  Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 01:44:58,833 [11] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/values   
+ 
+2019-01-02 01:44:59,147 [11] INFO  Request finished in 359.2037ms 404  
+ 
+2019-01-02 01:44:59,240 [8] INFO  Request starting HTTP/1.1 GET http://localhost:53058/favicon.ico   
+ 
+2019-01-02 01:44:59,243 [8] INFO  Request finished in 2.7721ms 404  
+ 
+2019-01-02 02:01:05,989 [9] INFO  Request starting HTTP/1.1 DEBUG http://localhost:53058/  0 
+ 
+2019-01-02 02:01:05,989 [8] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/values   
+ 
+2019-01-02 02:01:06,152 [9] INFO  Request finished in 249.9806ms 200  
+ 
+2019-01-02 02:01:07,358 [8] INFO  Request finished in 1317.9455ms 404  
+ 
+2019-01-02 02:01:29,262 [9] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/acount application/json 65 
+ 
+2019-01-02 02:01:29,339 [9] INFO  Request finished in 86.4988ms 404  
+ 
+2019-01-02 02:01:36,994 [8] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/account application/json 65 
+ 
+2019-01-02 02:01:37,990 [8] INFO  Executing action method Api.Controllers.AccountController.Post (Api) with arguments (Api.AuthenticateUtils.User, Microsoft.AspNetCore.Identity.UserManager`1[Api.Models.ApplicationUser], Microsoft.AspNetCore.Identity.SignInManager`1[Api.Models.ApplicationUser], Api.AuthenticateUtils.TokenConfigurations) - ModelState is Valid 
+ 
+2019-01-02 02:01:42,082 [8] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-02 02:01:43,713 [9] INFO  Executed DbCommand (183ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+ 
+2019-01-02 02:01:44,204 [9] INFO  Executed DbCommand (7ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:01:44,307 [19] INFO  Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:01:44,385 [9] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:01:44,402 [18] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:01:44,411 [19] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:01:44,418 [9] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:02:15,195 [8] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-02 02:02:15,265 [8] INFO  Executed action Api.Controllers.AccountController.Post (Api) in 38110.9637ms 
+ 
+2019-01-02 02:02:15,297 [8] INFO  Request finished in 38299.8968ms 200 application/json; charset=utf-8 
+ 
+2019-01-02 02:03:25,028 [9] INFO  Request starting HTTP/1.1 PUT http://localhost:53058/api/taxa/atualizar application/json 69 
+ 
+2019-01-02 02:03:25,432 [9] INFO  Failed to validate the token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBY2Vzc28tU3VwZXJ2aXNvciIsInVuaXF1ZV9uYW1lIjoic3VwZXJ2aXNvckBicmFzcGFnLmNvbS5iciIsImp0aSI6ImFhYWU5YzlkLTM0NTgtNDQ2Mi04ZTJiLTIzZmM0NjBkZjIxZCIsImV4cCI6MTU0NjQwMTczMX0.T1YqhzgKhMToJIaWBLGXZ7AWsLesoMZB4KWwWb6vxgU. 
+ 
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '01/02/2019 04:02:11'
+Current time: '01/02/2019 04:03:25'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwt, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2019-01-02 02:03:25,450 [9] INFO  Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '01/02/2019 04:02:11'
+Current time: '01/02/2019 04:03:25'. 
+ 
+2019-01-02 02:03:25,468 [9] INFO  Authorization failed for user: (null). 
+ 
+2019-01-02 02:03:25,472 [9] INFO  Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'. 
+ 
+2019-01-02 02:03:25,477 [9] INFO  Executing ChallengeResult with authentication schemes (Bearer). 
+ 
+2019-01-02 02:03:25,497 [9] INFO  AuthenticationScheme: Bearer was challenged. 
+ 
+2019-01-02 02:03:25,501 [9] INFO  Executed action Api.Controllers.TaxaController.AtualizarAliquota (Api) in 455.3537ms 
+ 
+2019-01-02 02:03:25,506 [9] INFO  Request finished in 484.923ms 401  
+ 
+2019-01-02 02:04:21,648 [9] INFO  Request starting HTTP/1.1 DEBUG http://localhost:53058/  0 
+ 
+2019-01-02 02:04:21,647 [8] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/values   
+ 
+2019-01-02 02:04:22,002 [9] INFO  Request finished in 462.39ms 200  
+ 
+2019-01-02 02:04:22,647 [8] INFO  Request finished in 1130.9369ms 404  
+ 
+2019-01-02 02:04:24,501 [9] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/account application/json 65 
+ 
+2019-01-02 02:04:25,859 [9] INFO  Executing action method Api.Controllers.AccountController.Post (Api) with arguments (Api.AuthenticateUtils.User, Microsoft.AspNetCore.Identity.UserManager`1[Api.Models.ApplicationUser], Microsoft.AspNetCore.Identity.SignInManager`1[Api.Models.ApplicationUser], Api.AuthenticateUtils.TokenConfigurations) - ModelState is Valid 
+ 
+2019-01-02 02:04:30,379 [9] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-02 02:04:32,222 [10] INFO  Executed DbCommand (225ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+ 
+2019-01-02 02:04:32,664 [10] INFO  Executed DbCommand (8ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:04:32,799 [10] INFO  Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:04:32,855 [8] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:04:32,872 [10] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:04:32,878 [11] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:04:32,885 [18] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:04:34,802 [9] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-02 02:04:34,858 [9] INFO  Executed action Api.Controllers.AccountController.Post (Api) in 10090.8487ms 
+ 
+2019-01-02 02:04:34,886 [9] INFO  Request finished in 10373.8561ms 200 application/json; charset=utf-8 
+ 
+2019-01-02 02:04:53,320 [10] INFO  Request starting HTTP/1.1 PUT http://localhost:53058/api/taxa/atualizar application/json 69 
+ 
+2019-01-02 02:04:53,473 [10] INFO  Failed to validate the token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBY2Vzc28tU3VwZXJ2aXNvciIsInVuaXF1ZV9uYW1lIjoic3VwZXJ2aXNvckBicmFzcGFnLmNvbS5iciIsImp0aSI6IjdjZjA1OTUxLWIzMzItNDlmZS1iNTgzLWNjZjdlNzExZjRhYiIsImV4cCI6MTU0NjQwMTg3NH0.flwmY3ys9vKCKXdB8Aig0lGMLusWtd3CDPRNMMQJwRU. 
+ 
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '01/02/2019 04:04:34'
+Current time: '01/02/2019 04:04:53'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwt, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2019-01-02 02:04:53,498 [10] INFO  Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '01/02/2019 04:04:34'
+Current time: '01/02/2019 04:04:53'. 
+ 
+2019-01-02 02:04:53,519 [10] INFO  Authorization failed for user: (null). 
+ 
+2019-01-02 02:04:53,523 [10] INFO  Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'. 
+ 
+2019-01-02 02:04:53,528 [10] INFO  Executing ChallengeResult with authentication schemes (Bearer). 
+ 
+2019-01-02 02:04:53,557 [10] INFO  AuthenticationScheme: Bearer was challenged. 
+ 
+2019-01-02 02:04:53,561 [10] INFO  Executed action Api.Controllers.TaxaController.AtualizarAliquota (Api) in 207.1035ms 
+ 
+2019-01-02 02:04:53,601 [10] INFO  Request finished in 255.3112ms 401  
+ 
+2019-01-02 02:06:36,637 [8] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/values   
+ 
+2019-01-02 02:06:36,637 [9] INFO  Request starting HTTP/1.1 DEBUG http://localhost:53058/  0 
+ 
+2019-01-02 02:06:36,739 [9] INFO  Request finished in 194.1651ms 200  
+ 
+2019-01-02 02:06:37,270 [8] INFO  Request finished in 725.3164ms 404  
+ 
+2019-01-02 02:06:50,237 [9] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/account application/json 65 
+ 
+2019-01-02 02:06:51,185 [9] INFO  Executing action method Api.Controllers.AccountController.Post (Api) with arguments (Api.AuthenticateUtils.User, Microsoft.AspNetCore.Identity.UserManager`1[Api.Models.ApplicationUser], Microsoft.AspNetCore.Identity.SignInManager`1[Api.Models.ApplicationUser], Api.AuthenticateUtils.TokenConfigurations) - ModelState is Valid 
+ 
+2019-01-02 02:06:55,589 [9] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-02 02:06:57,299 [10] INFO  Executed DbCommand (208ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+ 
+2019-01-02 02:06:57,878 [8] INFO  Executed DbCommand (9ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:06:57,982 [11] INFO  Executed DbCommand (18ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:06:58,056 [10] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:06:58,074 [11] INFO  Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:06:58,086 [11] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:06:58,092 [17] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:07:00,508 [9] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-02 02:07:00,578 [9] INFO  Executed action Api.Controllers.AccountController.Post (Api) in 10109.6421ms 
+ 
+2019-01-02 02:07:00,606 [9] INFO  Request finished in 10380.5467ms 200 application/json; charset=utf-8 
+ 
+2019-01-02 02:07:17,808 [8] INFO  Request starting HTTP/1.1 PUT http://localhost:53058/api/taxa/atualizar application/json 69 
+ 
+2019-01-02 02:07:18,000 [8] INFO  Successfully validated the token. 
+ 
+2019-01-02 02:07:18,065 [8] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-02 02:07:18,076 [8] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-02 02:08:51,123 [9] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/values   
+ 
+2019-01-02 02:08:51,123 [8] INFO  Request starting HTTP/1.1 DEBUG http://localhost:53058/  0 
+ 
+2019-01-02 02:08:51,252 [8] INFO  Request finished in 223.2669ms 200  
+ 
+2019-01-02 02:08:51,807 [9] INFO  Request finished in 782.9612ms 404  
+ 
+2019-01-02 02:13:34,070 [8] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/account application/json 65 
+ 
+2019-01-02 02:13:35,289 [8] INFO  Executing action method Api.Controllers.AccountController.Post (Api) with arguments (Api.AuthenticateUtils.User, Microsoft.AspNetCore.Identity.UserManager`1[Api.Models.ApplicationUser], Microsoft.AspNetCore.Identity.SignInManager`1[Api.Models.ApplicationUser], Api.AuthenticateUtils.TokenConfigurations) - ModelState is Valid 
+ 
+2019-01-02 02:13:43,767 [8] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-02 02:13:45,524 [22] INFO  Executed DbCommand (193ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+ 
+2019-01-02 02:13:46,127 [9] INFO  Executed DbCommand (9ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:13:46,224 [21] INFO  Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:13:46,283 [20] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:13:46,297 [21] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:13:46,305 [21] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-02 02:13:46,314 [20] INFO  Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-02 02:13:55,820 [8] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-02 02:13:55,878 [8] INFO  Executed action Api.Controllers.AccountController.Post (Api) in 21557.8747ms 
+ 
+2019-01-02 02:13:55,944 [8] INFO  Request finished in 21846.7581ms 200 application/json; charset=utf-8 
+ 
+2019-01-02 02:14:16,955 [8] INFO  Request starting HTTP/1.1 PUT http://localhost:53058/api/taxa/atualizar application/json 69 
+ 
+2019-01-02 02:14:17,065 [8] INFO  Successfully validated the token. 
+ 
+2019-01-02 02:14:17,103 [8] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-02 02:14:17,135 [8] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-02 02:14:17,635 [8] INFO  Executing action method Api.Controllers.TaxaController.AtualizarAliquota (Api) with arguments (Api.ViewModel.TaxaViewModel) - ModelState is Valid 
+ 
+2019-01-02 02:14:37,166 [8] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-02 02:14:37,173 [8] INFO  Executed action Api.Controllers.TaxaController.AtualizarAliquota (Api) in 20199.7323ms 
+ 
+2019-01-02 02:14:37,185 [8] INFO  Request finished in 20231.7163ms 400 application/json; charset=utf-8 
+ 

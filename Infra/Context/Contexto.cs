@@ -20,7 +20,7 @@ namespace Infra.Context
 
         public Contexto() { }
 
-        public Contexto(DbContextOptions options) : base(options)
+        public Contexto(DbContextOptions<Contexto> options) : base(options)
         {
             _options = options;
         }

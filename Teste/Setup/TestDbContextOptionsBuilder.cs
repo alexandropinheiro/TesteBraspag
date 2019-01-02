@@ -7,7 +7,7 @@ namespace PDV.Testes.Setup
 {
     public static class TestDbContextOptionsBuilder
     {
-        public static DbContextOptions BuildOptions()
+        public static DbContextOptions<Contexto> BuildOptions()
         {
             var optionsBuilder = new DbContextOptionsBuilder<Contexto>();
             

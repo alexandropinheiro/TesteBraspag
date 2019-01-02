@@ -1,6 +1,8 @@
-﻿using Api.ViewModel;
+﻿using Api.AuthenticateUtils;
+using Api.ViewModel;
 using Dominio;
 using Dominio.Aliquota;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -8,6 +10,7 @@ namespace Api.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class TaxaController : Controller
     {
         private readonly ITaxaRepository _aliquotaRepository;
@@ -21,6 +24,7 @@ namespace Api.Controllers
 
         [HttpPut]
         [Route("atualizar")]
+        [Authorize(Roles = "Acesso-Supervisor")]
         public IActionResult AtualizarAliquota([FromBody]TaxaViewModel aliquotaViewModel)
         {
             try
