@@ -24,7 +24,7 @@ namespace Api.Controllers
 
         [HttpPut]
         [Route("atualizar")]
-        [Authorize(Roles = "Acesso-Supervisor")]
+        [Authorize(Roles = Roles.ROLE_SUPERVISOR)]
         public IActionResult AtualizarAliquota([FromBody]TaxaViewModel aliquotaViewModel)
         {
             try

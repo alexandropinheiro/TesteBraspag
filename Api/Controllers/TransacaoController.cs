@@ -5,11 +5,14 @@ using Api.ViewModels;
 using Dominio.Operacao;
 using Dominio.Aliquota;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Api.AuthenticateUtils;
 
 namespace Api.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class TransacaoController : Controller
     {
         private readonly ITaxaRepository _aliquotaRepository;
@@ -21,6 +24,7 @@ namespace Api.Controllers
 
         [HttpPost]
         [Route("CalcularValores")]
+        [Authorize(Roles = Roles.ROLE_FUNCIONARIO)]
         public IActionResult CalcularValores([FromBody]DadosTransacaoViewModel dadosTransacaoViewModel)
         {
             try
@@ -49,6 +53,7 @@ namespace Api.Controllers
 
         [HttpPost]
         [Route("CalcularValoresListaCartoes")]
+        [Authorize(Roles = Roles.ROLE_FUNCIONARIO)]
         public IActionResult CalcularValoresListaCartoes([FromBody]List<DadosTransacaoViewModel> dadosTransacaoViewModel)
         {
             try
