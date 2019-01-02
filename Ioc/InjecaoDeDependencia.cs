@@ -15,6 +15,8 @@ namespace Ioc
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ITaxaRepository, TaxaRepository>();
             services.AddScoped<ITransacaoRepository, TransacaoRepository>();
+            services.AddScoped<IBandeiraRepository, BandeiraRepository>();
+            services.AddScoped<IAdquirenteRepository, AdquirenteRepository>();
             services.AddScoped<Contexto>();
         }
     }

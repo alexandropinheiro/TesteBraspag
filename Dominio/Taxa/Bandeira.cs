@@ -5,6 +5,6 @@ namespace Dominio.Aliquota
 {
     public class Bandeira : NomeBase
     {
-        public List<Taxa> Aliquotas { get; set; }
+        public List<Taxa> Taxas { get; set; }
     }
 }

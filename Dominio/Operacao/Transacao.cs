@@ -13,12 +13,12 @@ namespace Dominio.Operacao
             Transacoes = new List<ItemTransacao>();
         }
 
-        public decimal Valor { get; set; }
+        public double Valor { get; set; }
         public DateTime Data { get; set; }
 
         public ICollection<ItemTransacao> Transacoes { get; set; }
 
-        public void CriarItem(Taxa taxa, string numeroCartao, string validade, string cvv, decimal valor)
+        public void CriarItem(Taxa taxa, string numeroCartao, string validade, string cvv, double valor)
         {
             Transacoes.Add(new ItemTransacao
             {

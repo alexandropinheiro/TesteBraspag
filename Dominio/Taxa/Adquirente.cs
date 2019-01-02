@@ -5,6 +5,6 @@ namespace Dominio.Aliquota
 {
     public class Adquirente : NomeBase
     {
-        public ICollection<Taxa> Aliquotas { get; set; }
+        public ICollection<Taxa> Taxas { get; set; }
     }
 }

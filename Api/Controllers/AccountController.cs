@@ -1,8 +1,10 @@
 ﻿using Api.AuthenticateUtils;
 using Api.Models;
+using log4net.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -10,14 +12,23 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Api.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
     public class AccountController : Controller
-    {        
+    {
+
+        private readonly IConfiguration _configuration;
+        private readonly ILogger _logger;
+
+        public AccountController(IConfiguration configuration, ILogger logger)
+        {
+            _configuration = configuration;
+            _logger = logger;
+        }
+
         [AllowAnonymous]
         [HttpPost]
         public object Post(
@@ -31,18 +42,16 @@ namespace Api.Controllers
 
             if (usuario != null && !string.IsNullOrWhiteSpace(usuario.UserID))
             {
-                // Verifica a existência do usuário nas tabelas do
-                // ASP.NET Core Identity
                 var userIdentity = userManager
                     .FindByNameAsync(usuario.UserID).Result;
                 if (userIdentity != null)
                 {
-                    // Efetua o login com base no Id do usuário e sua senha
                     var resultadoLogin = signInManager
                         .CheckPasswordSignInAsync(userIdentity, usuario.Password, false)
                         .Result;
+
                     if (resultadoLogin.Succeeded)
-                    {
+                    {                        
                         listaClaims = ObterListaDeClaims(userManager, userIdentity);
 
                         credenciaisValidas = listaClaims.Any();
@@ -50,22 +59,9 @@ namespace Api.Controllers
                 }
 
                 if (credenciaisValidas)
-                {
-                    //var claims = new[] {
-                    //    new Claim(JwtRegisteredClaimNames.UniqueName, userIdentity.Email),
-                    //    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    //    new Claim(ClaimTypes.Role, Roles.ROLE_ACESSO)
-                    //};
-
-                    listaClaims.Add(
-                        new Claim(JwtRegisteredClaimNames.UniqueName, userIdentity.Email));
-
-                    listaClaims.Add(
-                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-                        );
-
+                {   
                     var key =
-                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes("35725c901c45f1c13f9e3fe8421a15dd2613"));
+                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["SecretKey"]));
                     var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                     DateTime dataCriacao = DateTime.Now;
@@ -112,6 +108,16 @@ namespace Api.Controllers
 
             if (userManager.IsInRoleAsync(applicationUser, Roles.ROLE_ACESSO).Result)
                 listaClaims.Add(new Claim(ClaimTypes.Role, Roles.ROLE_ACESSO));
+
+            if (listaClaims.Count > 0)
+            {
+                listaClaims.Add(
+                        new Claim(JwtRegisteredClaimNames.UniqueName, applicationUser.Email));
+
+                listaClaims.Add(
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                    );
+            }
 
             return listaClaims;
         }

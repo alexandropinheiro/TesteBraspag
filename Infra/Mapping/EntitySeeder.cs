@@ -1,4 +1,5 @@
 ﻿using Dominio.Aliquota;
+using Infra.Context;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -42,15 +43,15 @@ namespace Infra.Mapping
         public static List<Taxa> Taxas()
         {
             return new List<Taxa> {
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteVisa.Id, IdBandeira = _bandeiraCielo.Id, Percentual = Convert.ToDecimal(0.0003) },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteVisa.Id, IdBandeira = _bandeiraElavon.Id, Percentual = Convert.ToDecimal(0.015) },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteVisa.Id, IdBandeira = _bandeiraGetNet.Id, Percentual = Convert.ToDecimal(0.0107) },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteMaster.Id, IdBandeira = _bandeiraCielo.Id,  Percentual = Convert.ToDecimal(0.0002) },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteMaster.Id, IdBandeira = _bandeiraElavon.Id, Percentual = Convert.ToDecimal(0.0108) },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteMaster.Id, IdBandeira = _bandeiraGetNet.Id, Percentual = Convert.ToDecimal(0.0114) },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteElo.Id, IdBandeira = _bandeiraCielo.Id, Percentual = Convert.ToDecimal(0.0001) },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteElo.Id, IdBandeira = _bandeiraElavon.Id, Percentual = Convert.ToDecimal(0.0095) },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteElo.Id, IdBandeira = _bandeiraGetNet.Id, Percentual = Convert.ToDecimal(0.0102) }
+                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteVisa.Id, IdBandeira = _bandeiraCielo.Id, Percentual = 0.0003 },
+                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteVisa.Id, IdBandeira = _bandeiraElavon.Id, Percentual = 0.015 },
+                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteVisa.Id, IdBandeira = _bandeiraGetNet.Id, Percentual = 0.0107 },
+                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteMaster.Id, IdBandeira = _bandeiraCielo.Id,  Percentual = 0.0002 },
+                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteMaster.Id, IdBandeira = _bandeiraElavon.Id, Percentual = 0.0108 },
+                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteMaster.Id, IdBandeira = _bandeiraGetNet.Id, Percentual = 0.0114 },
+                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteElo.Id, IdBandeira = _bandeiraCielo.Id, Percentual = 0.0001 },
+                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteElo.Id, IdBandeira = _bandeiraElavon.Id, Percentual = 0.0095 },
+                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteElo.Id, IdBandeira = _bandeiraGetNet.Id, Percentual = 0.0102 }
             };
         }
 
@@ -68,6 +69,11 @@ namespace Infra.Mapping
         {
             builder.HasData(Taxas());
 
+        }
+
+        public static void Iniatize(this Contexto context)
+        {
+            context.Database.EnsureCreated();
         }
     }
 }

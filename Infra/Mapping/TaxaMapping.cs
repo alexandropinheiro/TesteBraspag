@@ -19,14 +19,14 @@ namespace Infra.Mapping
 
             builder.Seed();
 
-            builder.ToTable("Aliquota");
+            builder.ToTable("Taxa");
 
             builder.HasOne(a => a.Bandeira)
-                .WithMany(b => b.Aliquotas)
+                .WithMany(b => b.Taxas)
                 .HasForeignKey(a => a.IdBandeira);
 
             builder.HasOne(a => a.Adquirente)
-                .WithMany(b => b.Aliquotas)
+                .WithMany(b => b.Taxas)
                 .HasForeignKey(a => a.IdAdquirente);
         }
     }

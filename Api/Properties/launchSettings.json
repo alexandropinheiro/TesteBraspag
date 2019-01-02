@@ -11,15 +11,16 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/account",
       "environmentVariables": {
+        "SecretKey": "35725c901c45f1c13f9e3fe8421a15dd2613",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/account",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

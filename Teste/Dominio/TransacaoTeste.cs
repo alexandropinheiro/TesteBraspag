@@ -15,14 +15,14 @@ namespace PDV.Testes
         {
             _taxa = new Taxa {
                 Id = Guid.NewGuid(),
-                Percentual = Convert.ToDecimal(0.09)
+                Percentual = 0.09
             };
         }
 
         [Theory]
         [InlineData("1234123412341234", 100, 91, 9, "Cartão: 1234123412341234; Valor Lojista: R$91.00; Valor Adquirente: R$9.00.")]
         [InlineData("5487675590871233", 651.18, 592.57, 58.61, "Cartão: 5487675590871233; Valor Lojista: R$592.57; Valor Adquirente: R$58.61.")]
-        public void TestarCriacaoItem(string cartao, decimal valorTransacao, decimal valorLojista, decimal valorAdquirente, string retorno)
+        public void TestarCriacaoItem(string cartao, double valorTransacao, double valorLojista, double valorAdquirente, string retorno)
         {
             var transacaoFactory = new TransacaoFactory(valorTransacao);
             var transacao = transacaoFactory.Criar();

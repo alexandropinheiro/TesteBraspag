@@ -2,9 +2,6 @@
 using Api.AuthenticateUtils;
 using Microsoft.AspNetCore.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Api.Data
 {
@@ -27,28 +24,40 @@ namespace Api.Data
         {
             if (_context.Database.EnsureCreated())
             {
-                if (!_roleManager.RoleExistsAsync(Roles.ROLE_ACESSO).Result)
-                {
-                    var resultado = _roleManager.CreateAsync(
-                        new IdentityRole(Roles.ROLE_ACESSO)).Result;
-
-                    if (!resultado.Succeeded)
-                        throw new Exception($"Erro durante a criação da role {Roles.ROLE_ACESSO}.");
-                }
+                
+                CreateRoles(Roles.ROLE_ACESSO, 
+                            Roles.ROLE_FUNCIONARIO, 
+                            Roles.ROLE_SUPERVISOR);
 
                 CreateUser(
                     new ApplicationUser()
                     {
-                        UserName = "usuario1",
-                        Email = "usuario1@braspag.com.br",
+                        UserName = "supervisor",
+                        Email = "supervisor@braspag.com.br",
+                        EmailConfirmed = true
+                    }, "VouTrabalharNaBrasp@g2019", Roles.ROLE_SUPERVISOR);
+
+                CreateUser(
+                    new ApplicationUser()
+                    {
+                        UserName = "funcionario",
+                        Email = "funcionario@braspag.com.br",
+                        EmailConfirmed = true
+                    }, "VouTrabalharNaBrasp@g2019", Roles.ROLE_FUNCIONARIO);
+
+                CreateUser(
+                    new ApplicationUser()
+                    {
+                        UserName = "estagiario",
+                        Email = "estagiario@braspag.com.br",
                         EmailConfirmed = true
                     }, "VouTrabalharNaBrasp@g2019", Roles.ROLE_ACESSO);
 
                 CreateUser(
                     new ApplicationUser()
                     {
-                        UserName = "usuario2",
-                        Email = "usuario2@braspag.com.br",
+                        UserName = "UsuarioSemAcesso",
+                        Email = "usuariosemacesso@braspag.com.br",
                         EmailConfirmed = true
                     }, "VouTrabalharNaBrasp@g2019");
             }        
@@ -63,6 +72,21 @@ namespace Api.Data
                 if (resultado.Succeeded && !string.IsNullOrWhiteSpace(initialRole))
                     _userManager.AddToRoleAsync(user, initialRole).Wait();
 
+            }
+        }
+
+        private void CreateRoles(params string[] roles)
+        {
+            foreach (var role in roles)
+            {
+                if (!_roleManager.RoleExistsAsync(role).Result)
+                {
+                    var resultado = _roleManager.CreateAsync(
+                        new IdentityRole(role)).Result;
+
+                    if (!resultado.Succeeded)
+                        throw new Exception($"Erro durante a criação da role {role}.");
+                }
             }
         }
     }

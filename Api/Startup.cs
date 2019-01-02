@@ -1,6 +1,8 @@
 ﻿using Api.AuthenticateUtils;
 using Api.Data;
 using Api.Models;
+using Infra.Context;
+using Infra.Mapping;
 using Ioc;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -33,11 +35,12 @@ namespace Api
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BaseIdentity")));
 
+            services.AddDbContext<Contexto>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-
-            
 
             var tokenConfigurations = new TokenConfigurations();
             new ConfigureFromConfigurationOptions<TokenConfigurations>(
@@ -55,22 +58,44 @@ namespace Api
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = tokenConfigurations.Issuer,
                     ValidAudience = tokenConfigurations.Audience,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("35725c901c45f1c13f9e3fe8421a15dd2613")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["SecretKey"])),
                     ClockSkew = TimeSpan.Zero
                 });
 
             services.AddMvc();
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("PodeAlterarTaxa", policy => policy.RequireRole(Roles.ROLE_SUPERVISOR));
+                options.AddPolicy("PodeGravarTransacao", policy => policy.RequireRole(Roles.ROLE_SUPERVISOR, Roles.ROLE_FUNCIONARIO));                
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Webapi", Version = "v1" });
+
+                c.AddSecurityDefinition(
+                    "bearer",
+                    new ApiKeyScheme
+                    {
+                        In = "header",
+                        Description = "Autenticação baseada em Json Web Token (JWT)",
+                        Name = "Authorization",
+                        Type = "apiKey"
+                    });
+
             });
 
             InjecaoDeDependencia.RegisterServices(services);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, 
+                              IHostingEnvironment env, 
+                              ILoggerFactory loggerFactory,
+                              ApplicationDbContext contextApplicationUser,
+                              Contexto context,
+                              UserManager<ApplicationUser> userManager,
+                              RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -78,6 +103,11 @@ namespace Api
             }
 
             app.UseAuthentication();
+
+            new IdentityInitializer(contextApplicationUser, userManager, roleManager)
+                .Initialize();
+
+            EntitySeeder.Iniatize(context);
 
             app.UseMvc();
 

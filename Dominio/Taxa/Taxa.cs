@@ -10,7 +10,7 @@ namespace Dominio.Aliquota
         public Guid IdAdquirente { get; set; }
         public Guid IdBandeira { get; set; }
         
-        public decimal Percentual { get; set; }
+        public double Percentual { get; set; }
 
         public Adquirente Adquirente { get; set; }
         public Bandeira Bandeira { get; set; }

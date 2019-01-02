@@ -4,9 +4,9 @@ namespace Dominio.Operacao
 {
     public class TransacaoFactory
     {
-        private readonly decimal _valor;
+        private readonly double _valor;
 
-        public TransacaoFactory(decimal valor)
+        public TransacaoFactory(double valor)
         {
             _valor = valor;
         }

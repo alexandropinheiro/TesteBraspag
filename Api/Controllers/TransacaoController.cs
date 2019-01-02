@@ -15,26 +15,28 @@ namespace Api.Controllers
     [Authorize(AuthenticationSchemes = "Bearer")]
     public class TransacaoController : Controller
     {
-        private readonly ITaxaRepository _aliquotaRepository;
+        private readonly ITaxaRepository _taxaRepository;
 
-        public TransacaoController(ITaxaRepository aliquotaRepository)
+        public TransacaoController(ITaxaRepository taxaRepository)
         {
-            _aliquotaRepository = aliquotaRepository;
+            _taxaRepository = taxaRepository;
         }
 
         [HttpPost]
-        [Route("CalcularValores")]
-        [Authorize(Roles = Roles.ROLE_FUNCIONARIO)]
+        [Route("calcularvalores")]
+        [Authorize(Policy = "PodeGravarTransacao")]
         public IActionResult CalcularValores([FromBody]DadosTransacaoViewModel dadosTransacaoViewModel)
         {
             try
             {
-                var transacaoFactory = new TransacaoFactory(dadosTransacaoViewModel.ValorTransacao);
+                var valorTransacao = dadosTransacaoViewModel.ValorCartao;
+
+                var transacaoFactory = new TransacaoFactory(valorTransacao);
                 var transacao = transacaoFactory.Criar();
 
-                var aliquota = _aliquotaRepository.ObterPorAdquirenteBandeira(dadosTransacaoViewModel.IdBandeira, dadosTransacaoViewModel.IdAdquirente);
+                var taxa = _taxaRepository.ObterPorAdquirenteBandeira(dadosTransacaoViewModel.IdBandeira, dadosTransacaoViewModel.IdAdquirente);
 
-                transacao.CriarItem(aliquota,
+                transacao.CriarItem(taxa,
                                     dadosTransacaoViewModel.NumeroCartao,
                                     dadosTransacaoViewModel.ValidadeCartao,
                                     dadosTransacaoViewModel.CvvCartao,
@@ -53,7 +55,7 @@ namespace Api.Controllers
 
         [HttpPost]
         [Route("CalcularValoresListaCartoes")]
-        [Authorize(Roles = Roles.ROLE_FUNCIONARIO)]
+        [Authorize(Policy = "PodeGravarTransacao")]
         public IActionResult CalcularValoresListaCartoes([FromBody]List<DadosTransacaoViewModel> dadosTransacaoViewModel)
         {
             try
@@ -65,7 +67,7 @@ namespace Api.Controllers
 
                 dadosTransacaoViewModel.ForEach(
                     x =>
-                        transacao.CriarItem(_aliquotaRepository.ObterPorAdquirenteBandeira(x.IdBandeira, x.IdAdquirente),
+                        transacao.CriarItem(_taxaRepository.ObterPorAdquirenteBandeira(x.IdBandeira, x.IdAdquirente),
                                             x.NumeroCartao,
                                             x.ValidadeCartao,
                                             x.CvvCartao,

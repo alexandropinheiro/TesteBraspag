@@ -14224,6 +14224,7 @@
     ".NETCoreApp,Version=v2.0": [
       "Ioc >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.9",
+      "Microsoft.Extensions.Logging >= 2.2.0",
       "Microsoft.Extensions.Logging.Log4Net.AspNetCore >= 2.2.6",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.0",
@@ -14278,6 +14279,10 @@
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "[2.0.9, )"
+          },
+          "Microsoft.Extensions.Logging": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           },
           "Microsoft.Extensions.Logging.Log4Net.AspNetCore": {
             "target": "Package",

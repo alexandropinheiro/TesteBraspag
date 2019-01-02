@@ -6,13 +6,13 @@ namespace Servico.Operacao
 {
     public class TransacaoService : ITransacaoService
     {
-        private readonly ITaxaRepository _aliquotaRepository;
+        private readonly ITaxaRepository _taxaRepository;
         private readonly ITransacaoRepository _transacaoRepository;
 
-        public TransacaoService(ITaxaRepository aliquotaRepository,
+        public TransacaoService(ITaxaRepository taxaRepository,
                                 ITransacaoRepository transacaoRepository)
         {
-            _aliquotaRepository = aliquotaRepository;
+            _taxaRepository = taxaRepository;
             _transacaoRepository = transacaoRepository;
         }
 
@@ -20,8 +20,8 @@ namespace Servico.Operacao
         {
             foreach (var item in transacao.Transacoes)
             {
-                var aliquota = _aliquotaRepository.ObterPorAdquirenteBandeira(idBandeira, idAdquirente);
-                item.Taxa = aliquota;
+                var taxa = _taxaRepository.ObterPorAdquirenteBandeira(idBandeira, idAdquirente);
+                item.Taxa = taxa;
             }
         }
     }

@@ -13,26 +13,26 @@ namespace Api.Controllers
     [Authorize(AuthenticationSchemes = "Bearer")]
     public class TaxaController : Controller
     {
-        private readonly ITaxaRepository _aliquotaRepository;
+        private readonly ITaxaRepository _taxaRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public TaxaController(ITaxaRepository aliquotaRepository, IUnitOfWork unitOfWork)
+        public TaxaController(ITaxaRepository taxaRepository, IUnitOfWork unitOfWork)
         {
-            _aliquotaRepository = aliquotaRepository;
+            _taxaRepository = taxaRepository;
             _unitOfWork = unitOfWork;
         }
 
         [HttpPut]
         [Route("atualizar")]
-        [Authorize(Roles = Roles.ROLE_SUPERVISOR)]
-        public IActionResult AtualizarAliquota([FromBody]TaxaViewModel aliquotaViewModel)
+        [Authorize(Policy = "PodeAlterarTaxa")]
+        public IActionResult AtualizarTaxa([FromBody]TaxaViewModel taxaViewModel)
         {
             try
             {
-                var aliquota = _aliquotaRepository.ObterPorId(aliquotaViewModel.Id);
-                aliquota.Percentual = aliquotaViewModel.Taxa;
+                var taxa = _taxaRepository.ObterPorId(taxaViewModel.Id);
+                taxa.Percentual = taxaViewModel.Taxa;
                 
-                _aliquotaRepository.Atualizar(aliquota);
+                _taxaRepository.Atualizar(taxa);
                 _unitOfWork.Commit();
 
             }catch(Exception e)
@@ -41,6 +41,13 @@ namespace Api.Controllers
             }
 
             return Ok("Atualização realizada com sucesso!");
+        }
+
+        [HttpGet]
+        [Route("Listar")]
+        public IActionResult ListarTaxas()
+        {
+            return Ok(_taxaRepository.ObterTodos());
         }
     }
 }

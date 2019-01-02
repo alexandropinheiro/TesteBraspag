@@ -36,7 +36,7 @@ namespace Teste.Repository
             var adquirente = _repositoryAdquirente.Obter(b => b.Nome.Contains("Visa")).FirstOrDefault();
 
             var taxa = _repositoryTaxa.ObterPorAdquirenteBandeira(bandeira.Id, adquirente.Id);
-            taxa.Percentual = Convert.ToDecimal(0.0007);
+            taxa.Percentual = 0.0007;
 
             #region=================== Implementação do teste ==========================
 
