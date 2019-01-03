@@ -1,6 +1,8 @@
 ﻿using Dominio.Aliquota;
+using log4net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
 
 namespace Api.Controllers
 {
@@ -10,7 +12,7 @@ namespace Api.Controllers
     public class AdquirenteController : Controller
     {
         private readonly IAdquirenteRepository _adquirenteRepository;
-
+        
         public AdquirenteController(IAdquirenteRepository adquirenteRepository)
         {
             _adquirenteRepository = adquirenteRepository;
@@ -20,6 +22,8 @@ namespace Api.Controllers
         [Route("Listar")]
         public IActionResult ListarAdquirentes()
         {
+            RegisterLog.Log(TipoLog.Info, "Obter Adquirentes.");
+
             return Ok(_adquirenteRepository.ObterTodos());
         }
     }

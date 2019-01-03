@@ -2,9 +2,11 @@
 using Api.ViewModel;
 using Dominio;
 using Dominio.Aliquota;
+using log4net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Reflection;
 
 namespace Api.Controllers
 {
@@ -15,7 +17,7 @@ namespace Api.Controllers
     {
         private readonly ITaxaRepository _taxaRepository;
         private readonly IUnitOfWork _unitOfWork;
-
+        
         public TaxaController(ITaxaRepository taxaRepository, IUnitOfWork unitOfWork)
         {
             _taxaRepository = taxaRepository;
@@ -23,22 +25,31 @@ namespace Api.Controllers
         }
 
         [HttpPut]
-        [Route("atualizar")]
+        [Route("atualizar/{id:guid}")]
         [Authorize(Policy = "PodeAlterarTaxa")]
-        public IActionResult AtualizarTaxa([FromBody]TaxaViewModel taxaViewModel)
+        public IActionResult AtualizarTaxa(Guid id, [FromBody]TaxaViewModel taxaViewModel)
         {
             try
             {
-                var taxa = _taxaRepository.ObterPorId(taxaViewModel.Id);
+                var taxa = _taxaRepository.ObterPorId(id);
+
+                if (taxa == null)
+                    throw new Exception("Taxa não encontrada.");
+
                 taxa.Percentual = taxaViewModel.Taxa;
-                
+
+                RegisterLog.Log(TipoLog.Info, "Atualização de percentual da taxa.");
+
                 _taxaRepository.Atualizar(taxa);
                 _unitOfWork.Commit();
 
             }catch(Exception e)
             {
+                RegisterLog.Log(TipoLog.Error, "Erro ao atualizar taxa.");
                 return BadRequest(e.Message);
             }
+
+            RegisterLog.Log(TipoLog.Info, "Atualização realizada com sucesso!");
 
             return Ok("Atualização realizada com sucesso!");
         }
@@ -47,6 +58,7 @@ namespace Api.Controllers
         [Route("Listar")]
         public IActionResult ListarTaxas()
         {
+            RegisterLog.Log(TipoLog.Info, "Obter Taxas");
             return Ok(_taxaRepository.ObterTodos());
         }
     }

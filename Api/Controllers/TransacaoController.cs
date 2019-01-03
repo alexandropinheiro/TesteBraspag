@@ -6,7 +6,9 @@ using Dominio.Operacao;
 using Dominio.Aliquota;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using Api.AuthenticateUtils;
+using log4net;
+using System.Reflection;
+using Dominio;
 
 namespace Api.Controllers
 {
@@ -16,10 +18,16 @@ namespace Api.Controllers
     public class TransacaoController : Controller
     {
         private readonly ITaxaRepository _taxaRepository;
-
-        public TransacaoController(ITaxaRepository taxaRepository)
+        private readonly ITransacaoRepository _transacaoRepository;
+        private readonly IUnitOfWork _uow;
+        
+        public TransacaoController(ITaxaRepository taxaRepository, 
+                                   ITransacaoRepository transacaoRepository,
+                                   IUnitOfWork uow)
         {
             _taxaRepository = taxaRepository;
+            _transacaoRepository = transacaoRepository;
+            _uow = uow;
         }
 
         [HttpPost]
@@ -34,7 +42,11 @@ namespace Api.Controllers
                 var transacaoFactory = new TransacaoFactory(valorTransacao);
                 var transacao = transacaoFactory.Criar();
 
+                RegisterLog.Log(TipoLog.Info, "Consulta para Obter Taxa por Bandeira e Adquirente");
                 var taxa = _taxaRepository.ObterPorAdquirenteBandeira(dadosTransacaoViewModel.IdBandeira, dadosTransacaoViewModel.IdAdquirente);
+
+                if (taxa == null)
+                    throw new Exception("Taxa não encontrada");
 
                 transacao.CriarItem(taxa,
                                     dadosTransacaoViewModel.NumeroCartao,
@@ -42,13 +54,20 @@ namespace Api.Controllers
                                     dadosTransacaoViewModel.CvvCartao,
                                     dadosTransacaoViewModel.ValorCartao);
 
+                RegisterLog.Log(TipoLog.Info, "Gravação da Transação.");
+
+                _transacaoRepository.Gravar(transacao);
+                _uow.Commit();
+
                 var itemTransacao = transacao.Transacoes.FirstOrDefault();
 
+                RegisterLog.Log(TipoLog.Info, "Sucesso ao calcular valores.");
                 return Ok(itemTransacao.DescricaoRetorno);
 
             }
             catch (Exception e)
             {
+                RegisterLog.Log(TipoLog.Error, "Erro na execução do cálculo de valores");
                 return BadRequest(e.Message);
             }
         }
@@ -65,20 +84,33 @@ namespace Api.Controllers
                 var transacaoFactory = new TransacaoFactory(valorTransacao);
                 var transacao = transacaoFactory.Criar();
 
+                RegisterLog.Log(TipoLog.Info, "Criar item de transacao para cada informação de cartão da lista.");
+
                 dadosTransacaoViewModel.ForEach(
-                    x =>
-                        transacao.CriarItem(_taxaRepository.ObterPorAdquirenteBandeira(x.IdBandeira, x.IdAdquirente),
+                    x => {
+                        var taxa = _taxaRepository.ObterPorAdquirenteBandeira(x.IdBandeira, x.IdAdquirente);
+
+                        if (taxa == null)
+                            throw new Exception("Taxa não encontrada.");
+
+                        transacao.CriarItem(taxa,
                                             x.NumeroCartao,
                                             x.ValidadeCartao,
                                             x.CvvCartao,
-                                            x.ValorCartao)
+                                            x.ValorCartao);
+                    }
                 );
+
+                RegisterLog.Log(TipoLog.Info, "Gravação da Transação.");
+                _transacaoRepository.Gravar(transacao);
+                _uow.Commit();
 
                 var retorno = new List<string>();
 
                 foreach (var item in transacao.Transacoes)
                     retorno.Add(item.DescricaoRetorno);
 
+                RegisterLog.Log(TipoLog.Info, "Sucesso ao calcular valores para mais de um cartão.");
                 return Ok(retorno);
             }catch(Exception e)
             {

@@ -21,12 +21,10 @@ namespace Api.Controllers
     {
 
         private readonly IConfiguration _configuration;
-        private readonly ILogger _logger;
 
-        public AccountController(IConfiguration configuration, ILogger logger)
+        public AccountController(IConfiguration configuration)
         {
             _configuration = configuration;
-            _logger = logger;
         }
 
         [AllowAnonymous]
@@ -59,7 +57,9 @@ namespace Api.Controllers
                 }
 
                 if (credenciaisValidas)
-                {   
+                {
+                    RegisterLog.Log(TipoLog.Info, $"Usuário {usuario.UserID} efetuou login no sistema.");
+
                     var key =
                         new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["SecretKey"]));
                     var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -85,10 +85,13 @@ namespace Api.Controllers
                         message = "OK"
                     };
                 }
+
+                RegisterLog.Log(TipoLog.Info, "Sem permissão para usar a aplicação.");
+
                 return new
                 {
                     authenticated = false,
-                    message = "Falha ao autenticar"
+                    message = "Sem permissão para usar a aplicação."
                 };
             }
 

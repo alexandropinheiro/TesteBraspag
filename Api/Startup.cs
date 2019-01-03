@@ -86,7 +86,9 @@ namespace Api
 
             });
 
-            InjecaoDeDependencia.RegisterServices(services);
+            //InjecaoDeDependencia.RegisterServices(services);
+
+            services.RegistrarDependenciasDoIoC();
         }
 
         public void Configure(IApplicationBuilder app, 
