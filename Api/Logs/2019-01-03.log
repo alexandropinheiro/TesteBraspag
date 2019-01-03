@@ -18,3 +18,7 @@
  
 2019-01-03 21:06:31,090 [10] INFO  Request finished in 5.3581ms 404  
  
+2019-01-03 21:19:15,800 [8] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/account   
+ 
+2019-01-03 21:19:16,263 [8] INFO  Request finished in 508.2548ms 404  
+ 

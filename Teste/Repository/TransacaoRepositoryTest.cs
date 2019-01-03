@@ -48,7 +48,7 @@ namespace Teste.Repository
 
             var itemTransacao = transacao.Transacoes.FirstOrDefault();
 
-            Assert.Equal("Cartão: 1234123412341234; Valor Lojista: R$179.87; Valor Adquirente: R$0.13.", 
+            Assert.Equal("Cartão: 1234123412341234; Valor Lojista: R$ 179,87; Valor Adquirente: R$ 0,13.", 
                           itemTransacao.DescricaoRetorno);
             #endregion
         }
@@ -93,12 +93,12 @@ namespace Teste.Repository
                 switch (i)
                 {
                     case 1:
-                        Assert.Equal("Cartão: 1234123412341234; Valor Lojista: R$97.20; Valor Adquirente: R$2.80.",
+                        Assert.Equal("Cartão: 1234123412341234; Valor Lojista: R$ 97,20; Valor Adquirente: R$ 2,80.",
                           item.DescricaoRetorno);
                         break;
 
                     case 2:
-                        Assert.Equal("Cartão: 9876987698769876; Valor Lojista: R$148.05; Valor Adquirente: R$1.95.",
+                        Assert.Equal("Cartão: 9876987698769876; Valor Lojista: R$ 148,05; Valor Adquirente: R$ 1,95.",
                           item.DescricaoRetorno);
                         break;
                 }
