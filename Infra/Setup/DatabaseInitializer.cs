@@ -12,12 +12,10 @@ namespace Infra.Setup
             _contexto = contexto;
         }
 
-        public virtual bool ApplyDatabase()
+        public virtual void ApplyDatabase()
         {
             if (!_contexto.Database.EnsureCreated())
                 _contexto.Database.Migrate();
-
-            return true;
         }        
     }
 }

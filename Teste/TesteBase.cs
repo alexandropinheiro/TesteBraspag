@@ -14,7 +14,7 @@ namespace Teste
             Contexto = TestDbContextBuilder.BuildDbContext();
             databaseInitializer = new DatabaseInitializer(Contexto);
 
-            databaseInitializer.ApplyDatabase();            
+            databaseInitializer.ApplyDatabase();
         }
 
         protected void TearDown()
