@@ -1,6 +1,7 @@
 ﻿using Dominio.Base;
 using Dominio.Aliquota;
 using System;
+using System.Globalization;
 
 namespace Dominio.Operacao
 {
@@ -38,7 +39,7 @@ namespace Dominio.Operacao
         {
             get
             {
-                return $"Cartão: {NumeroCartao}; Valor Lojista: R${ValorLojista.ToString("#,##0.00")}; Valor Adquirente: R${ValorAdquirente.ToString("#,##0.00")}.";
+                return $"Cartão: {NumeroCartao}; Valor Lojista: {string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", ValorLojista)}; Valor Adquirente: {string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", ValorAdquirente)}.";
             }
         }
     }

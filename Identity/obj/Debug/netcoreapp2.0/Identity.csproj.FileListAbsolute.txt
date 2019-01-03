@@ -1,0 +1,9 @@
+C:\Projetos\Braspag\Identity\bin\Debug\netcoreapp2.0\Identity.deps.json
+C:\Projetos\Braspag\Identity\bin\Debug\netcoreapp2.0\Identity.dll
+C:\Projetos\Braspag\Identity\obj\Debug\netcoreapp2.0\Identity.csprojAssemblyReference.cache
+C:\Projetos\Braspag\Identity\obj\Debug\netcoreapp2.0\Identity.csproj.CoreCompileInputs.cache
+C:\Projetos\Braspag\Identity\obj\Debug\netcoreapp2.0\Identity.AssemblyInfoInputs.cache
+C:\Projetos\Braspag\Identity\obj\Debug\netcoreapp2.0\Identity.AssemblyInfo.cs
+C:\Projetos\Braspag\Identity\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Projetos\Braspag\Identity\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Projetos\Braspag\Identity\obj\Debug\netcoreapp2.0\Identity.csproj.CopyComplete
