@@ -1,8 +1,8 @@
-﻿namespace PDV.Infra.Setup
+﻿namespace Infra.Setup
 {
     public interface IDatabaseInitializer
     {
-        bool ApplyMigrationsIfPossible();
-        void Seed();
+        bool ApplyDatabase();
+        //void Seed();
     }
 }

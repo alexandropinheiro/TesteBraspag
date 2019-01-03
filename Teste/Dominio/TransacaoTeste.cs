@@ -1,11 +1,10 @@
 using Dominio.Aliquota;
 using Dominio.Operacao;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace PDV.Testes
+namespace Testes
 {
     public class TransacaoTeste
     {

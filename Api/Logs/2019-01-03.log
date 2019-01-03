@@ -1,0 +1,8 @@
+2019-01-03 11:18:02,595 [8] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/account   
+ 
+2019-01-03 11:18:02,595 [9] INFO  Request starting HTTP/1.1 DEBUG http://localhost:53058/  0 
+ 
+2019-01-03 11:18:02,751 [9] INFO  Request finished in 283.6745ms 200  
+ 
+2019-01-03 11:18:03,391 [8] INFO  Request finished in 929.1323ms 404  
+ 

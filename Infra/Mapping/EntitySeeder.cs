@@ -9,49 +9,49 @@ namespace Infra.Mapping
     public static class EntitySeeder
     {
         #region Bandeiras
-        private static readonly Bandeira _bandeiraCielo = new Bandeira { Id = Guid.NewGuid(), Nome = "Cielo" };
-        private static readonly Bandeira _bandeiraElavon = new Bandeira { Id = Guid.NewGuid(), Nome = "Elavon" };
-        private static readonly Bandeira _bandeiraGetNet = new Bandeira { Id = Guid.NewGuid(), Nome = "GetNet" };
+        private static readonly Adquirente _adquirenteCielo = new Adquirente { Id = Guid.NewGuid(), Nome = "Cielo" };
+        private static readonly Adquirente _adquirenteElavon = new Adquirente { Id = Guid.NewGuid(), Nome = "Elavon" };
+        private static readonly Adquirente _adquirenteGetNet = new Adquirente { Id = Guid.NewGuid(), Nome = "GetNet" };
         #endregion
 
         #region Adquirentes
-        private static readonly Adquirente _adquirenteVisa = new Adquirente { Id = Guid.NewGuid(), Nome = "Visa" };
-        private static readonly Adquirente _adquirenteMaster = new Adquirente { Id = Guid.NewGuid(), Nome = "Master" };
-        private static readonly Adquirente _adquirenteElo = new Adquirente { Id = Guid.NewGuid(), Nome = "Elo" };
+        private static readonly Bandeira _bandeiraVisa = new Bandeira { Id = Guid.NewGuid(), Nome = "Visa" };
+        private static readonly Bandeira _bandeiraMaster = new Bandeira { Id = Guid.NewGuid(), Nome = "Master" };
+        private static readonly Bandeira _bandeiraElo = new Bandeira { Id = Guid.NewGuid(), Nome = "Elo" };
         #endregion
         
-        public static List<Bandeira> Bandeiras()
-        {
-            return new List<Bandeira>
-            {
-                _bandeiraCielo,
-                _bandeiraElavon,
-                _bandeiraGetNet
-            };
-        }
-
         public static List<Adquirente> Adquirentes()
         {
             return new List<Adquirente>
             {
-                _adquirenteElo,
-                _adquirenteVisa,
-                _adquirenteMaster
+                _adquirenteCielo,
+                _adquirenteElavon,
+                _adquirenteGetNet
+            };
+        }
+
+        public static List<Bandeira> Bandeiras()
+        {
+            return new List<Bandeira>
+            {
+                _bandeiraElo,
+                _bandeiraVisa,
+                _bandeiraMaster
             };
         }
 
         public static List<Taxa> Taxas()
         {
             return new List<Taxa> {
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteVisa.Id, IdBandeira = _bandeiraCielo.Id, Percentual = 0.0003 },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteVisa.Id, IdBandeira = _bandeiraElavon.Id, Percentual = 0.015 },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteVisa.Id, IdBandeira = _bandeiraGetNet.Id, Percentual = 0.0107 },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteMaster.Id, IdBandeira = _bandeiraCielo.Id,  Percentual = 0.0002 },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteMaster.Id, IdBandeira = _bandeiraElavon.Id, Percentual = 0.0108 },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteMaster.Id, IdBandeira = _bandeiraGetNet.Id, Percentual = 0.0114 },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteElo.Id, IdBandeira = _bandeiraCielo.Id, Percentual = 0.0001 },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteElo.Id, IdBandeira = _bandeiraElavon.Id, Percentual = 0.0095 },
-                new Taxa { Id = Guid.NewGuid(), IdAdquirente = _adquirenteElo.Id, IdBandeira = _bandeiraGetNet.Id, Percentual = 0.0102 }
+                new Taxa { Id = Guid.NewGuid(), IdBandeira = _bandeiraVisa.Id, IdAdquirente = _adquirenteCielo.Id, Percentual = 0.0003 },
+                new Taxa { Id = Guid.NewGuid(), IdBandeira = _bandeiraVisa.Id, IdAdquirente = _adquirenteElavon.Id, Percentual = 0.015 },
+                new Taxa { Id = Guid.NewGuid(), IdBandeira = _bandeiraVisa.Id, IdAdquirente = _adquirenteGetNet.Id, Percentual = 0.0107 },
+                new Taxa { Id = Guid.NewGuid(), IdBandeira = _bandeiraMaster.Id, IdAdquirente = _adquirenteCielo.Id,  Percentual = 0.0002 },
+                new Taxa { Id = Guid.NewGuid(), IdBandeira = _bandeiraMaster.Id, IdAdquirente = _adquirenteElavon.Id, Percentual = 0.0108 },
+                new Taxa { Id = Guid.NewGuid(), IdBandeira = _bandeiraMaster.Id, IdAdquirente = _adquirenteGetNet.Id, Percentual = 0.0114 },
+                new Taxa { Id = Guid.NewGuid(), IdBandeira = _bandeiraElo.Id, IdAdquirente = _adquirenteCielo.Id, Percentual = 0.0001 },
+                new Taxa { Id = Guid.NewGuid(), IdBandeira = _bandeiraElo.Id, IdAdquirente = _adquirenteElavon.Id, Percentual = 0.0095 },
+                new Taxa { Id = Guid.NewGuid(), IdBandeira = _bandeiraElo.Id, IdAdquirente = _adquirenteGetNet.Id, Percentual = 0.0102 }
             };
         }
 

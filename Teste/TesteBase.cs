@@ -1,6 +1,6 @@
 using Infra.Context;
-using PDV.Infra.Setup;
-using PDV.Testes.Setup;
+using Infra.Setup;
+using Testes.Setup;
 
 namespace Teste
 {
@@ -14,13 +14,11 @@ namespace Teste
             Contexto = TestDbContextBuilder.BuildDbContext();
             databaseInitializer = new DatabaseInitializer(Contexto);
 
-            databaseInitializer.ApplyMigrationsIfPossible();
-            databaseInitializer.Seed();
+            databaseInitializer.ApplyDatabase();            
         }
 
         protected void TearDown()
-        {
-            Contexto.Database.EnsureDeleted();
+        {            
             databaseInitializer = null;
         }
     }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace PDV.Testes.Setup
+namespace Testes.Setup
 {
     public static class TestDbContextOptionsBuilder
     {

@@ -1,6 +1,6 @@
 ﻿using Infra.Context;
 
-namespace PDV.Testes.Setup
+namespace Testes.Setup
 {
     public static class TestDbContextBuilder
     {

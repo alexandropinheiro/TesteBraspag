@@ -1,0 +1,16 @@
+C:\Projetos\Braspag\Infra\bin\Release\netcoreapp2.0\Infra.deps.json
+C:\Projetos\Braspag\Infra\bin\Release\netcoreapp2.0\Infra.runtimeconfig.json
+C:\Projetos\Braspag\Infra\bin\Release\netcoreapp2.0\Infra.runtimeconfig.dev.json
+C:\Projetos\Braspag\Infra\bin\Release\netcoreapp2.0\Infra.dll
+C:\Projetos\Braspag\Infra\bin\Release\netcoreapp2.0\Infra.pdb
+C:\Projetos\Braspag\Infra\bin\Release\netcoreapp2.0\Dominio.dll
+C:\Projetos\Braspag\Infra\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Projetos\Braspag\Infra\bin\Release\netcoreapp2.0\Dominio.pdb
+C:\Projetos\Braspag\Infra\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Projetos\Braspag\Infra\obj\Release\netcoreapp2.0\Infra.csprojAssemblyReference.cache
+C:\Projetos\Braspag\Infra\obj\Release\netcoreapp2.0\Infra.csproj.CoreCompileInputs.cache
+C:\Projetos\Braspag\Infra\obj\Release\netcoreapp2.0\Infra.AssemblyInfoInputs.cache
+C:\Projetos\Braspag\Infra\obj\Release\netcoreapp2.0\Infra.AssemblyInfo.cs
+C:\Projetos\Braspag\Infra\obj\Release\netcoreapp2.0\Infra.csproj.CopyComplete
+C:\Projetos\Braspag\Infra\obj\Release\netcoreapp2.0\Infra.dll
+C:\Projetos\Braspag\Infra\obj\Release\netcoreapp2.0\Infra.pdb

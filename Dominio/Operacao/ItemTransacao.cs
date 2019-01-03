@@ -30,7 +30,7 @@ namespace Dominio.Operacao
         {
             get
             {
-                return Valor - ValorAdquirente;
+                return Math.Round((Valor - ValorAdquirente), 2);
             }
         }
 
@@ -38,7 +38,7 @@ namespace Dominio.Operacao
         {
             get
             {
-                return $"Cartão: {NumeroCartao}; Valor Lojista: R${ValorLojista.ToString("#,###.00")}; Valor Adquirente: R${ValorAdquirente.ToString("#,###.00")}.";
+                return $"Cartão: {NumeroCartao}; Valor Lojista: R${ValorLojista.ToString("#,##0.00")}; Valor Adquirente: R${ValorAdquirente.ToString("#,##0.00")}.";
             }
         }
     }

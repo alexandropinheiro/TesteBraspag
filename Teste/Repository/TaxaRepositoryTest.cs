@@ -2,13 +2,12 @@
 using Dominio.Aliquota;
 using Infra.Repository;
 using Repository;
-using System;
 using System.Linq;
 using Xunit;
 
 namespace Teste.Repository
 {
-    public class TaxaRepositoryTest : TesteBase, IDisposable
+    public class TaxaRepositoryTest : TesteBase
     {
         private ITaxaRepository _repository;
         private readonly IUnitOfWork _uow;
@@ -32,11 +31,6 @@ namespace Teste.Repository
             _uow.Commit();
 
             Assert.Equal(0.0089, _repository.ObterPorId(id).Percentual);
-        }
-
-        public void Dispose()
-        {            
-            TearDown();
         }
     }
 }
