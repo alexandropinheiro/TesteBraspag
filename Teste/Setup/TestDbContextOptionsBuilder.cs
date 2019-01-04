@@ -1,7 +1,6 @@
 ﻿using Infra.Context;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System.IO;
 
 namespace Testes.Setup
 {
@@ -10,13 +9,11 @@ namespace Testes.Setup
         public static DbContextOptions<Contexto> BuildOptions()
         {
             var optionsBuilder = new DbContextOptionsBuilder<Contexto>();
-            
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile($"appsettings.development.json")
-                .Build();
 
-            optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+            var sqliteConnection = new SqliteConnection("DataSource=:memory:");
+            sqliteConnection.Open();
+
+            optionsBuilder.UseSqlite(sqliteConnection);
 
             return optionsBuilder.Options;
         }
