@@ -16,10 +16,5 @@ namespace Teste
 
             databaseInitializer.ApplyDatabase();
         }
-
-        protected void TearDown()
-        {            
-            databaseInitializer = null;
-        }
     }
 }

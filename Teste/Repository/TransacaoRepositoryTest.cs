@@ -5,12 +5,13 @@ using Dominio.Operacao;
 using Dominio.Taxas;
 using Infra.Repository;
 using Repository;
+using System;
 using System.Linq;
 using Xunit;
 
 namespace Teste.Repository
 {
-    public class TransacaoRepositoryTest : TesteBase
+    public class TransacaoRepositoryTest : TesteBase, IDisposable
     {
         private ITransacaoRepository _repositoryTransacao;
         private IBandeiraRepository _repositoryBandeira;
@@ -55,6 +56,14 @@ namespace Teste.Repository
 
             _repositoryTransacao.Gravar(transacao);
             _uow.Commit();
+
+            // Verificando se gravou corretamente na base de dados
+            var transacaoGravada = _repositoryTransacao.ObterPorId(transacao.Id);
+            Assert.Equal(transacao.Id, transacaoGravada.Id);
+            Assert.Equal(transacao.Valor, transacaoGravada.Valor);
+            Assert.Equal(transacao.Data, transacaoGravada.Data);
+            Assert.Equal(180, transacaoGravada.Transacoes.Sum(x => x.Valor));
+
             #endregion
         }
 
@@ -110,6 +119,24 @@ namespace Teste.Repository
                 i++;
             }
             #endregion
+
+            _repositoryTransacao.Gravar(transacao);
+            _uow.Commit();
+
+            // Verificando se gravou corretamente na base de dados
+            var transacaoGravada = _repositoryTransacao.ObterPorId(transacao.Id);
+            Assert.Equal(transacao.Id, transacaoGravada.Id);
+            Assert.Equal(transacao.Valor, transacaoGravada.Valor);
+            Assert.Equal(transacao.Data, transacaoGravada.Data);
+            Assert.Equal(250, transacaoGravada.Transacoes.Sum(x => x.Valor));
+        }
+
+        public void Dispose()
+        {
+            var transacoes = _repositoryTransacao.ObterTodos();
+
+            transacoes.ForEach(t => Contexto.Remove(t));
+            _uow.Commit();
         }
     }
 }

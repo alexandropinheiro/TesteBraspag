@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Infra.Context;
+﻿using Infra.Context;
 
 namespace Infra.Setup
 {
@@ -13,9 +12,8 @@ namespace Infra.Setup
         }
 
         public virtual void ApplyDatabase()
-        {
-            if (!_contexto.Database.EnsureCreated())
-                _contexto.Database.Migrate();
+        {            
+             _contexto.Database.EnsureCreated();
         }        
     }
 }
