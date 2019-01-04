@@ -1,0 +1,603 @@
+2019-01-04 00:05:12,012 [9] INFO  Request starting HTTP/1.1 DEBUG http://localhost:53058/  0 
+ 
+2019-01-04 00:05:12,013 [8] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/account   
+ 
+2019-01-04 00:05:12,797 [9] INFO  Request finished in 870.3585ms 200  
+ 
+2019-01-04 00:05:13,266 [8] INFO  Request finished in 1380.1697ms 404  
+ 
+2019-01-04 00:05:29,236 [9] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/account application/json 74 
+ 
+2019-01-04 00:05:29,955 [9] INFO  Executing action method Api.Controllers.AccountController.Post (Api) with arguments (Api.AuthenticateUtils.User, Microsoft.AspNetCore.Identity.UserManager`1[Api.Models.ApplicationUser], Microsoft.AspNetCore.Identity.SignInManager`1[Api.Models.ApplicationUser], Api.AuthenticateUtils.TokenConfigurations) - ModelState is Valid 
+ 
+2019-01-04 00:05:29,994 [9] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:05:30,952 [11] INFO  Executed DbCommand (184ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+ 
+2019-01-04 00:05:31,352 [8] INFO  Executed DbCommand (8ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:05:31,460 [11] INFO  Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:05:31,507 [8] INFO  Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:05:31,522 [10] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:05:31,527 [10] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:05:31,535 [8] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:05:31,538 [9] INFO  Usuário supervisor efetuou login no sistema. 
+ 
+2019-01-04 00:05:31,669 [9] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:05:31,728 [9] INFO  Executed action Api.Controllers.AccountController.Post (Api) in 2213.9186ms 
+ 
+2019-01-04 00:05:31,743 [9] INFO  Request finished in 2542.8001ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:05:54,955 [8] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/Bandeira/Listar   
+ 
+2019-01-04 00:05:55,096 [8] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:05:55,146 [8] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-04 00:05:55,153 [8] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:05:55,171 [8] INFO  Executing action method Api.Controllers.BandeiraController.ListarBandeiras (Api) with arguments ((null)) - ModelState is Valid 
+ 
+2019-01-04 00:05:55,177 [8] INFO  Obter Bandeiras. 
+ 
+2019-01-04 00:05:55,358 [8] INFO  Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Nome]
+FROM [Bandeira] AS [b] 
+ 
+2019-01-04 00:05:55,390 [8] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:05:55,427 [8] INFO  Executed action Api.Controllers.BandeiraController.ListarBandeiras (Api) in 447.5948ms 
+ 
+2019-01-04 00:05:55,474 [8] INFO  Request finished in 478.8315ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:06:21,664 [9] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/Adquirente/Listar   
+ 
+2019-01-04 00:06:21,696 [9] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:06:21,715 [9] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-04 00:06:21,733 [9] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:06:21,747 [9] INFO  Executing action method Api.Controllers.AdquirenteController.ListarAdquirentes (Api) with arguments ((null)) - ModelState is Valid 
+ 
+2019-01-04 00:06:21,749 [9] INFO  Obter Adquirentes. 
+ 
+2019-01-04 00:06:21,770 [9] INFO  Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Nome]
+FROM [Adquirente] AS [a] 
+ 
+2019-01-04 00:06:21,788 [9] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:06:21,808 [9] INFO  Executed action Api.Controllers.AdquirenteController.ListarAdquirentes (Api) in 116.0811ms 
+ 
+2019-01-04 00:06:21,850 [9] INFO  Request finished in 151.839ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:07:04,787 [28] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/Transacao/CalcularValoresListaCartoes application/json 493 
+ 
+2019-01-04 00:07:04,933 [28] INFO  Failed to validate the token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBY2Vzc28tU3VwZXJ2aXNvciIsInVuaXF1ZV9uYW1lIjoic3VwZXJ2aXNvckBicmFzcGFnLmNvbS5iciIsImp0aSI6ImQyNzg2ZDUxLTY4MDgtNGNjNi04M2ZmLTkwZjBlYWYwYzc4OSIsImV4cCI6MTU0NjU2NzQ2NCwiaXNzIjoiYnJhc3BhZy5jb20uYnIiLCJhdWQiOiJicmFzcGFnLmNvbS5iciJ9.zUN1lmU9SMdvKgj3L9uJSqYa8P90alByCeEtb-b_PfA. 
+ 
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '01/04/2019 02:04:24'
+Current time: '01/04/2019 02:07:04'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwt, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2019-01-04 00:07:04,969 [28] INFO  Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '01/04/2019 02:04:24'
+Current time: '01/04/2019 02:07:04'. 
+ 
+2019-01-04 00:07:04,988 [28] INFO  Authorization failed for user: (null). 
+ 
+2019-01-04 00:07:04,993 [28] INFO  Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'. 
+ 
+2019-01-04 00:07:05,002 [28] INFO  Executing ChallengeResult with authentication schemes (Bearer). 
+ 
+2019-01-04 00:07:05,036 [28] INFO  AuthenticationScheme: Bearer was challenged. 
+ 
+2019-01-04 00:07:05,040 [28] INFO  Executed action Api.Controllers.TransacaoController.CalcularValoresListaCartoes (Api) in 242.7423ms 
+ 
+2019-01-04 00:07:05,046 [28] INFO  Request finished in 259.3117ms 401  
+ 
+2019-01-04 00:07:25,108 [8] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/Transacao/CalcularValoresListaCartoes application/json 493 
+ 
+2019-01-04 00:07:25,232 [8] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:07:25,341 [8] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-04 00:07:25,391 [8] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-04 00:07:25,412 [8] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:07:25,516 [8] INFO  Executing action method Api.Controllers.TransacaoController.CalcularValoresListaCartoes (Api) with arguments (System.Collections.Generic.List`1[Api.ViewModels.DadosTransacaoViewModel]) - ModelState is Valid 
+ 
+2019-01-04 00:07:25,532 [8] INFO  Criar item de transacao para cada informação de cartão da lista. 
+ 
+2019-01-04 00:07:25,581 [8] INFO  Executed DbCommand (17ms) [Parameters=[@__idBandeira_0='?' (DbType = Guid), @__idAdquirente_1='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[IdAdquirente], [x].[IdBandeira], [x].[Percentual]
+FROM [Taxa] AS [x]
+WHERE ([x].[IdBandeira] = @__idBandeira_0) AND ([x].[IdAdquirente] = @__idAdquirente_1) 
+ 
+2019-01-04 00:07:25,600 [8] INFO  Executed DbCommand (0ms) [Parameters=[@__idBandeira_0='?' (DbType = Guid), @__idAdquirente_1='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[IdAdquirente], [x].[IdBandeira], [x].[Percentual]
+FROM [Taxa] AS [x]
+WHERE ([x].[IdBandeira] = @__idBandeira_0) AND ([x].[IdAdquirente] = @__idAdquirente_1) 
+ 
+2019-01-04 00:07:25,605 [8] INFO  Gravação da Transação. 
+ 
+2019-01-04 00:07:25,759 [8] INFO  Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Double)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Transacao] ([Id], [Data], [Valor])
+VALUES (@p0, @p1, @p2); 
+ 
+2019-01-04 00:07:25,808 [8] INFO  Executed DbCommand (39ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Double), @p7='?' (DbType = Double), @p8='?' (DbType = Double)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ItemTransacao] ([Id], [Cvv], [IdTaxa], [IdTransacao], [NumeroCartao], [Validade], [Valor], [ValorAdquirente], [ValorLojista])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8); 
+ 
+2019-01-04 00:07:25,814 [8] INFO  Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Double), @p7='?' (DbType = Double), @p8='?' (DbType = Double)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ItemTransacao] ([Id], [Cvv], [IdTaxa], [IdTransacao], [NumeroCartao], [Validade], [Valor], [ValorAdquirente], [ValorLojista])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8); 
+ 
+2019-01-04 00:07:25,834 [8] INFO  Sucesso ao calcular valores para mais de um cartão. 
+ 
+2019-01-04 00:07:25,839 [8] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:07:25,846 [8] INFO  Executed action Api.Controllers.TransacaoController.CalcularValoresListaCartoes (Api) in 728.2262ms 
+ 
+2019-01-04 00:07:25,891 [8] INFO  Request finished in 749.9111ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:08:35,016 [34] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/account application/json 74 
+ 
+2019-01-04 00:08:35,049 [34] INFO  Executing action method Api.Controllers.AccountController.Post (Api) with arguments (Api.AuthenticateUtils.User, Microsoft.AspNetCore.Identity.UserManager`1[Api.Models.ApplicationUser], Microsoft.AspNetCore.Identity.SignInManager`1[Api.Models.ApplicationUser], Api.AuthenticateUtils.TokenConfigurations) - ModelState is Valid 
+ 
+2019-01-04 00:08:35,067 [34] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:08:35,079 [9] INFO  Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+ 
+2019-01-04 00:08:35,109 [8] INFO  Executed DbCommand (8ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:08:35,124 [33] INFO  Executed DbCommand (8ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:08:35,140 [33] INFO  Executed DbCommand (9ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:08:35,148 [9] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:08:35,156 [9] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:08:35,176 [33] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:08:35,189 [34] INFO  Usuário estagiario efetuou login no sistema. 
+ 
+2019-01-04 00:08:35,196 [34] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:08:35,209 [34] INFO  Executed action Api.Controllers.AccountController.Post (Api) in 177.9317ms 
+ 
+2019-01-04 00:08:35,247 [34] INFO  Request finished in 209.6176ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:08:49,085 [9] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/Transacao/CalcularValoresListaCartoes application/json 493 
+ 
+2019-01-04 00:08:49,096 [9] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:08:49,108 [9] INFO  Authorization was successful for user: estagiario@braspag.com.br. 
+ 
+2019-01-04 00:08:49,115 [9] INFO  Authorization failed for user: estagiario@braspag.com.br. 
+ 
+2019-01-04 00:08:49,169 [9] INFO  Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'. 
+ 
+2019-01-04 00:08:49,215 [9] INFO  Executing ForbidResult with authentication schemes (). 
+ 
+2019-01-04 00:08:49,255 [9] INFO  AuthenticationScheme: Identity.Application was forbidden. 
+ 
+2019-01-04 00:08:49,263 [9] INFO  Executed action Api.Controllers.TransacaoController.CalcularValoresListaCartoes (Api) in 169.71ms 
+ 
+2019-01-04 00:08:49,273 [9] INFO  Request finished in 183.8151ms 302  
+ 
+2019-01-04 00:08:49,368 [34] INFO  Request starting HTTP/1.1 GET http://localhost:53058/Account/AccessDenied?ReturnUrl=%2Fapi%2FTransacao%2FCalcularValoresListaCartoes   
+ 
+2019-01-04 00:08:49,411 [34] INFO  Request finished in 5.2284ms 404  
+ 
+2019-01-04 00:09:03,797 [33] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/Adquirente/Listar   
+ 
+2019-01-04 00:09:03,811 [33] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:09:03,820 [33] INFO  Authorization was successful for user: estagiario@braspag.com.br. 
+ 
+2019-01-04 00:09:03,826 [33] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:09:03,832 [33] INFO  Executing action method Api.Controllers.AdquirenteController.ListarAdquirentes (Api) with arguments ((null)) - ModelState is Valid 
+ 
+2019-01-04 00:09:03,834 [33] INFO  Obter Adquirentes. 
+ 
+2019-01-04 00:09:03,841 [33] INFO  Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Nome]
+FROM [Adquirente] AS [a] 
+ 
+2019-01-04 00:09:03,845 [33] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:09:03,850 [33] INFO  Executed action Api.Controllers.AdquirenteController.ListarAdquirentes (Api) in 46.9368ms 
+ 
+2019-01-04 00:09:03,865 [33] INFO  Request finished in 58.3655ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:09:18,675 [33] INFO  Request starting HTTP/1.1 GET http://localhost:53058/swagger/index.html   
+ 
+2019-01-04 00:09:18,859 [33] INFO  Request finished in 180.6483ms 200 text/html 
+ 
+2019-01-04 00:09:18,991 [33] INFO  Request starting HTTP/1.1 GET http://localhost:53058/swagger/swagger-ui.css   
+ 
+2019-01-04 00:09:19,051 [33] INFO  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+ 
+2019-01-04 00:09:19,460 [8] INFO  Request finished in 474.3892ms 200 text/css 
+ 
+2019-01-04 00:09:20,735 [9] INFO  Request starting HTTP/1.1 GET http://localhost:53058/swagger/favicon-16x16.png   
+ 
+2019-01-04 00:09:20,780 [9] INFO  Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A' 
+ 
+2019-01-04 00:09:20,810 [9] INFO  Request finished in 51.5919ms 200 image/png 
+ 
+2019-01-04 00:09:21,428 [34] INFO  Request starting HTTP/1.1 GET http://localhost:53058/swagger/v1/swagger.json   
+ 
+2019-01-04 00:09:21,953 [34] INFO  Request finished in 520.8661ms 200 application/json;charset=utf-8 
+ 
+2019-01-04 00:09:53,990 [9] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/Taxa/Listar   
+ 
+2019-01-04 00:09:54,002 [9] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:09:54,035 [9] INFO  Authorization was successful for user: estagiario@braspag.com.br. 
+ 
+2019-01-04 00:09:54,065 [9] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:09:54,084 [9] INFO  Executing action method Api.Controllers.TaxaController.ListarTaxas (Api) with arguments ((null)) - ModelState is Valid 
+ 
+2019-01-04 00:09:54,100 [9] INFO  Obter Taxas 
+ 
+2019-01-04 00:09:54,120 [9] INFO  Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[IdAdquirente], [t].[IdBandeira], [t].[Percentual]
+FROM [Taxa] AS [t] 
+ 
+2019-01-04 00:09:54,132 [9] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:09:54,149 [9] INFO  Executed action Api.Controllers.TaxaController.ListarTaxas (Api) in 147.0141ms 
+ 
+2019-01-04 00:09:54,183 [9] INFO  Request finished in 165.7958ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:11:06,593 [41] INFO  Request starting HTTP/1.1 PUT http://localhost:53058/api/Taxa/atualizar/c793198e-cbc7-4b24-b1e9-1b30f2780822  0 
+ 
+2019-01-04 00:11:06,634 [41] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:11:06,647 [41] INFO  Authorization was successful for user: estagiario@braspag.com.br. 
+ 
+2019-01-04 00:11:06,693 [41] INFO  Authorization failed for user: estagiario@braspag.com.br. 
+ 
+2019-01-04 00:11:06,698 [41] INFO  Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'. 
+ 
+2019-01-04 00:11:06,733 [41] INFO  Executing ForbidResult with authentication schemes (). 
+ 
+2019-01-04 00:11:06,747 [41] INFO  AuthenticationScheme: Identity.Application was forbidden. 
+ 
+2019-01-04 00:11:06,756 [41] INFO  Executed action Api.Controllers.TaxaController.AtualizarTaxa (Api) in 117.8652ms 
+ 
+2019-01-04 00:11:06,766 [41] INFO  Request finished in 170.5563ms 302  
+ 
+2019-01-04 00:11:06,778 [41] INFO  Request starting HTTP/1.1 GET http://localhost:53058/Account/AccessDenied?ReturnUrl=%2Fapi%2FTaxa%2Fatualizar%2Fc793198e-cbc7-4b24-b1e9-1b30f2780822   
+ 
+2019-01-04 00:11:06,790 [41] INFO  Request finished in 6.5281ms 404  
+ 
+2019-01-04 00:11:34,377 [9] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/account application/json 75 
+ 
+2019-01-04 00:11:34,394 [9] INFO  Executing action method Api.Controllers.AccountController.Post (Api) with arguments (Api.AuthenticateUtils.User, Microsoft.AspNetCore.Identity.UserManager`1[Api.Models.ApplicationUser], Microsoft.AspNetCore.Identity.SignInManager`1[Api.Models.ApplicationUser], Api.AuthenticateUtils.TokenConfigurations) - ModelState is Valid 
+ 
+2019-01-04 00:11:34,411 [9] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:11:34,423 [42] INFO  Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+ 
+2019-01-04 00:11:34,460 [42] INFO  Executed DbCommand (4ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:11:34,471 [42] INFO  Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:11:34,494 [41] INFO  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:11:34,517 [41] INFO  Executed DbCommand (6ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:11:34,547 [42] INFO  Executed DbCommand (14ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:11:34,562 [41] INFO  Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:11:34,565 [9] INFO  Usuário funcionario efetuou login no sistema. 
+ 
+2019-01-04 00:11:34,576 [9] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:11:34,582 [9] INFO  Executed action Api.Controllers.AccountController.Post (Api) in 195.0044ms 
+ 
+2019-01-04 00:11:34,633 [9] INFO  Request finished in 218.7117ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:11:49,488 [8] INFO  Request starting HTTP/1.1 PUT http://localhost:53058/api/Taxa/atualizar/c793198e-cbc7-4b24-b1e9-1b30f2780822 text/plain 22 
+ 
+2019-01-04 00:11:49,551 [8] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:11:49,567 [8] INFO  Authorization was successful for user: funcionario@braspag.com.br. 
+ 
+2019-01-04 00:11:49,573 [8] INFO  Authorization failed for user: funcionario@braspag.com.br. 
+ 
+2019-01-04 00:11:49,604 [8] INFO  Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'. 
+ 
+2019-01-04 00:11:49,614 [8] INFO  Executing ForbidResult with authentication schemes (). 
+ 
+2019-01-04 00:11:49,618 [8] INFO  AuthenticationScheme: Identity.Application was forbidden. 
+ 
+2019-01-04 00:11:49,622 [8] INFO  Executed action Api.Controllers.TaxaController.AtualizarTaxa (Api) in 112.8546ms 
+ 
+2019-01-04 00:11:49,654 [8] INFO  Request finished in 152.4525ms 302  
+ 
+2019-01-04 00:11:49,706 [8] INFO  Request starting HTTP/1.1 GET http://localhost:53058/Account/AccessDenied?ReturnUrl=%2Fapi%2FTaxa%2Fatualizar%2Fc793198e-cbc7-4b24-b1e9-1b30f2780822   
+ 
+2019-01-04 00:11:49,837 [8] INFO  Request finished in 50.6565ms 404  
+ 
+2019-01-04 00:12:01,974 [42] INFO  Request starting HTTP/1.1 POST http://localhost:53058/api/account application/json 74 
+ 
+2019-01-04 00:12:01,997 [42] INFO  Executing action method Api.Controllers.AccountController.Post (Api) with arguments (Api.AuthenticateUtils.User, Microsoft.AspNetCore.Identity.UserManager`1[Api.Models.ApplicationUser], Microsoft.AspNetCore.Identity.SignInManager`1[Api.Models.ApplicationUser], Api.AuthenticateUtils.TokenConfigurations) - ModelState is Valid 
+ 
+2019-01-04 00:12:02,032 [42] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:12:02,139 [9] INFO  Executed DbCommand (87ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+ 
+2019-01-04 00:12:02,186 [9] INFO  Executed DbCommand (8ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:12:02,220 [8] INFO  Executed DbCommand (8ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:12:02,248 [8] INFO  Executed DbCommand (6ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:12:02,316 [9] INFO  Executed DbCommand (43ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:12:02,333 [9] INFO  Executed DbCommand (4ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+ 
+2019-01-04 00:12:02,446 [8] INFO  Executed DbCommand (101ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+ 
+2019-01-04 00:12:02,450 [42] INFO  Usuário supervisor efetuou login no sistema. 
+ 
+2019-01-04 00:12:02,460 [42] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:12:02,496 [42] INFO  Executed action Api.Controllers.AccountController.Post (Api) in 485.1418ms 
+ 
+2019-01-04 00:12:02,536 [42] INFO  Request finished in 537.7205ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:12:15,670 [42] INFO  Request starting HTTP/1.1 PUT http://localhost:53058/api/Taxa/atualizar/c793198e-cbc7-4b24-b1e9-1b30f2780822 text/plain 22 
+ 
+2019-01-04 00:12:15,688 [42] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:12:15,693 [42] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-04 00:12:15,702 [42] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-04 00:12:15,713 [42] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:12:15,774 [42] INFO  Executing HttpStatusCodeResult, setting HTTP status code 415 
+ 
+2019-01-04 00:12:15,793 [42] INFO  Executed action Api.Controllers.TaxaController.AtualizarTaxa (Api) in 104.4859ms 
+ 
+2019-01-04 00:12:15,809 [42] INFO  Request finished in 142.2634ms 415  
+ 
+2019-01-04 00:12:22,718 [41] INFO  Request starting HTTP/1.1 PUT http://localhost:53058/api/Taxa/atualizar/c793198e-cbc7-4b24-b1e9-1b30f2780822 application/json 22 
+ 
+2019-01-04 00:12:22,726 [41] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:12:22,735 [41] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-04 00:12:22,741 [41] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-04 00:12:22,747 [41] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:12:22,760 [41] INFO  Executing action method Api.Controllers.TaxaController.AtualizarTaxa (Api) with arguments (c793198e-cbc7-4b24-b1e9-1b30f2780822, Api.ViewModel.TaxaViewModel) - ModelState is Valid 
+ 
+2019-01-04 00:12:22,835 [41] INFO  Executed DbCommand (21ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[IdAdquirente], [e].[IdBandeira], [e].[Percentual]
+FROM [Taxa] AS [e]
+WHERE [e].[Id] = @__get_Item_0 
+ 
+2019-01-04 00:12:22,902 [41] INFO  Atualização de percentual da taxa. 
+ 
+2019-01-04 00:12:23,093 [41] INFO  Executed DbCommand (6ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Double)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Taxa] SET [IdAdquirente] = @p0, [IdBandeira] = @p1, [Percentual] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT; 
+ 
+2019-01-04 00:12:23,110 [41] INFO  Atualização realizada com sucesso! 
+ 
+2019-01-04 00:12:23,118 [41] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:12:23,141 [41] INFO  Executed action Api.Controllers.TaxaController.AtualizarTaxa (Api) in 404.0935ms 
+ 
+2019-01-04 00:12:23,162 [41] INFO  Request finished in 431.5069ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:12:35,504 [41] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/Taxa/Listar   
+ 
+2019-01-04 00:12:35,511 [41] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:12:35,519 [41] INFO  Authorization was successful for user: estagiario@braspag.com.br. 
+ 
+2019-01-04 00:12:35,525 [41] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:12:35,531 [41] INFO  Executing action method Api.Controllers.TaxaController.ListarTaxas (Api) with arguments ((null)) - ModelState is Valid 
+ 
+2019-01-04 00:12:35,532 [41] INFO  Obter Taxas 
+ 
+2019-01-04 00:12:35,539 [41] INFO  Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[IdAdquirente], [t].[IdBandeira], [t].[Percentual]
+FROM [Taxa] AS [t] 
+ 
+2019-01-04 00:12:35,544 [41] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:12:35,560 [41] INFO  Executed action Api.Controllers.TaxaController.ListarTaxas (Api) in 45.7756ms 
+ 
+2019-01-04 00:12:35,585 [41] INFO  Request finished in 60.3408ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:12:50,133 [8] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/Taxa/Listar   
+ 
+2019-01-04 00:12:50,142 [8] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:12:50,148 [8] INFO  Authorization was successful for user: estagiario@braspag.com.br. 
+ 
+2019-01-04 00:12:50,172 [8] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:12:50,179 [8] INFO  Executing action method Api.Controllers.TaxaController.ListarTaxas (Api) with arguments ((null)) - ModelState is Valid 
+ 
+2019-01-04 00:12:50,181 [8] INFO  Obter Taxas 
+ 
+2019-01-04 00:12:50,192 [8] INFO  Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[IdAdquirente], [t].[IdBandeira], [t].[Percentual]
+FROM [Taxa] AS [t] 
+ 
+2019-01-04 00:12:50,200 [8] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:12:50,216 [8] INFO  Executed action Api.Controllers.TaxaController.ListarTaxas (Api) in 66.5055ms 
+ 
+2019-01-04 00:12:50,251 [8] INFO  Request finished in 87.758ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:12:55,047 [9] INFO  Request starting HTTP/1.1 PUT http://localhost:53058/api/Taxa/atualizar/c793198e-cbc7-4b24-b1e9-1b30f2780822 application/json 22 
+ 
+2019-01-04 00:12:55,053 [9] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:12:55,063 [9] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-04 00:12:55,075 [9] INFO  Authorization was successful for user: supervisor@braspag.com.br. 
+ 
+2019-01-04 00:12:55,081 [9] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:12:55,086 [9] INFO  Executing action method Api.Controllers.TaxaController.AtualizarTaxa (Api) with arguments (c793198e-cbc7-4b24-b1e9-1b30f2780822, Api.ViewModel.TaxaViewModel) - ModelState is Valid 
+ 
+2019-01-04 00:12:55,095 [9] INFO  Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[IdAdquirente], [e].[IdBandeira], [e].[Percentual]
+FROM [Taxa] AS [e]
+WHERE [e].[Id] = @__get_Item_0 
+ 
+2019-01-04 00:12:55,096 [9] INFO  Atualização de percentual da taxa. 
+ 
+2019-01-04 00:12:55,106 [9] INFO  Executed DbCommand (4ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Double)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Taxa] SET [IdAdquirente] = @p0, [IdBandeira] = @p1, [Percentual] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT; 
+ 
+2019-01-04 00:12:55,108 [9] INFO  Atualização realizada com sucesso! 
+ 
+2019-01-04 00:12:55,112 [9] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:12:55,120 [9] INFO  Executed action Api.Controllers.TaxaController.AtualizarTaxa (Api) in 64.6273ms 
+ 
+2019-01-04 00:12:55,154 [9] INFO  Request finished in 77.4341ms 200 application/json; charset=utf-8 
+ 
+2019-01-04 00:13:01,496 [41] INFO  Request starting HTTP/1.1 GET http://localhost:53058/api/Taxa/Listar   
+ 
+2019-01-04 00:13:01,508 [41] INFO  Successfully validated the token. 
+ 
+2019-01-04 00:13:01,519 [41] INFO  Authorization was successful for user: estagiario@braspag.com.br. 
+ 
+2019-01-04 00:13:01,524 [41] INFO  Entity Framework Core 2.2.0-rtm-35687 initialized 'Contexto' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+ 
+2019-01-04 00:13:01,530 [41] INFO  Executing action method Api.Controllers.TaxaController.ListarTaxas (Api) with arguments ((null)) - ModelState is Valid 
+ 
+2019-01-04 00:13:01,532 [41] INFO  Obter Taxas 
+ 
+2019-01-04 00:13:01,537 [41] INFO  Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[IdAdquirente], [t].[IdBandeira], [t].[Percentual]
+FROM [Taxa] AS [t] 
+ 
+2019-01-04 00:13:01,543 [41] INFO  Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+ 
+2019-01-04 00:13:01,548 [41] INFO  Executed action Api.Controllers.TaxaController.ListarTaxas (Api) in 43.45ms 
+ 
+2019-01-04 00:13:01,569 [41] INFO  Request finished in 57.0779ms 200 application/json; charset=utf-8 
+ 

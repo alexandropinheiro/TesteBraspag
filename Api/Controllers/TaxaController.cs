@@ -1,12 +1,9 @@
-﻿using Api.AuthenticateUtils;
-using Api.ViewModel;
+﻿using Api.ViewModel;
 using Dominio;
-using Dominio.Aliquota;
-using log4net;
+using Dominio.Taxas;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Reflection;
 
 namespace Api.Controllers
 {

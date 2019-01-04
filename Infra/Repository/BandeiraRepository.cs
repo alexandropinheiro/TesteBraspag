@@ -1,4 +1,4 @@
-﻿using Dominio.Aliquota;
+﻿using Dominio.Bandeiras;
 using Infra.Context;
 
 namespace Infra.Repository

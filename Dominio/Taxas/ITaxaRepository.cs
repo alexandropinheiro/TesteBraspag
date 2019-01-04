@@ -1,7 +1,7 @@
 ﻿using Dominio.Base;
 using System;
 
-namespace Dominio.Aliquota
+namespace Dominio.Taxas
 {
     public interface ITaxaRepository : IRepositoryBase<Taxa>
     {

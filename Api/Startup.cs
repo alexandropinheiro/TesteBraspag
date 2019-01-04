@@ -86,8 +86,6 @@ namespace Api
 
             });
 
-            //InjecaoDeDependencia.RegisterServices(services);
-
             services.RegistrarDependenciasDoIoC();
         }
 

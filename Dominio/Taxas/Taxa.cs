@@ -1,9 +1,11 @@
-﻿using Dominio.Base;
+﻿using Dominio.Adquirentes;
+using Dominio.Bandeiras;
+using Dominio.Base;
 using Dominio.Operacao;
 using System;
 using System.Collections.Generic;
 
-namespace Dominio.Aliquota
+namespace Dominio.Taxas
 {
     public class Taxa: EntidadeBase
     {

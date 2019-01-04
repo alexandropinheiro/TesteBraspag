@@ -1,10 +1,12 @@
-﻿using Dominio.Aliquota;
+﻿using Dominio.Adquirentes;
 using Dominio.Operacao;
 using Infra.Mapping;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Infra.Extensions;
 using System.IO;
+using Dominio.Taxas;
+using Dominio.Bandeiras;
 
 namespace Infra.Context
 {

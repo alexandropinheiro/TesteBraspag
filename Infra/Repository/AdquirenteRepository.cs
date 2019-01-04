@@ -1,4 +1,4 @@
-﻿using Dominio.Aliquota;
+﻿using Dominio.Adquirentes;
 using Infra.Context;
 
 namespace Infra.Repository

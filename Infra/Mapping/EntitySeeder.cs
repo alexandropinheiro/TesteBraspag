@@ -1,5 +1,8 @@
-﻿using Dominio.Aliquota;
+﻿using Dominio.Adquirentes;
+using Dominio.Bandeiras;
+using Dominio.Taxas;
 using Infra.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -73,7 +76,7 @@ namespace Infra.Mapping
 
         public static void Iniatize(this Contexto context)
         {
-            context.Database.EnsureCreated();
+            if (context.Database.EnsureCreated()) context.Database.Migrate();
         }
     }
 }

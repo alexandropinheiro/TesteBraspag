@@ -1,6 +1,6 @@
 ﻿using Dominio.Base;
 
-namespace Dominio.Aliquota
+namespace Dominio.Adquirentes
 {
     public interface IAdquirenteRepository : IRepositoryBase<Adquirente>
     {

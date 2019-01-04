@@ -1,5 +1,5 @@
 ﻿using Dominio;
-using Dominio.Aliquota;
+using Dominio.Taxas;
 using Infra.Repository;
 using Repository;
 using System.Linq;

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Dominio.Aliquota;
+using Dominio.Taxas;
 using Infra.Context;
 
 namespace Infra.Repository

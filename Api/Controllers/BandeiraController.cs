@@ -1,8 +1,6 @@
-﻿using Dominio.Aliquota;
-using log4net;
+﻿using Dominio.Bandeiras;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Reflection;
 
 namespace Api.Controllers
 {

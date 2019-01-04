@@ -1,5 +1,5 @@
-using Dominio.Aliquota;
 using Dominio.Operacao;
+using Dominio.Taxas;
 using System;
 using System.Linq;
 using Xunit;

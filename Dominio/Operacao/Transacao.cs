@@ -1,7 +1,7 @@
 ﻿using Dominio.Base;
-using Dominio.Aliquota;
 using System;
 using System.Collections.Generic;
+using Dominio.Taxas;
 
 namespace Dominio.Operacao
 {
@@ -20,7 +20,7 @@ namespace Dominio.Operacao
 
         public void CriarItem(Taxa taxa, string numeroCartao, string validade, string cvv, double valor)
         {
-            Transacoes.Add(new ItemTransacao
+            var itemTransacao = new ItemTransacao
             {
                 Id = Guid.NewGuid(),
                 IdTaxa = taxa.Id,
@@ -30,7 +30,11 @@ namespace Dominio.Operacao
                 Cvv = cvv,
                 Valor = valor,
                 IdTransacao = Id
-            });
+            };
+
+            itemTransacao.RatearValores();
+
+            Transacoes.Add(itemTransacao);
         }
     }
 }

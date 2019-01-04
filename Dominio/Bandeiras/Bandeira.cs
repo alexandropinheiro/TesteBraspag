@@ -1,7 +1,8 @@
 ﻿using Dominio.Base;
+using Dominio.Taxas;
 using System.Collections.Generic;
 
-namespace Dominio.Aliquota
+namespace Dominio.Bandeiras
 {
     public class Bandeira : NomeBase
     {

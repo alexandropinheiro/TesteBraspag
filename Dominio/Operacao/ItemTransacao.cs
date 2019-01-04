@@ -1,7 +1,7 @@
 ﻿using Dominio.Base;
-using Dominio.Aliquota;
 using System;
 using System.Globalization;
+using Dominio.Taxas;
 
 namespace Dominio.Operacao
 {
@@ -19,20 +19,13 @@ namespace Dominio.Operacao
         public Transacao Transacao { get; set; }
         public Taxa Taxa { get; set; }
 
-        public double ValorAdquirente
-        {
-            get
-            {
-                return Math.Round(Valor * Taxa.Percentual, 2);
-            }   
-        }
+        public double ValorAdquirente { get; set; }
+        public double ValorLojista { get; set; }
 
-        public double ValorLojista
-        {
-            get
-            {
-                return Math.Round((Valor - ValorAdquirente), 2);
-            }
+        public void RatearValores()
+        {            
+            ValorAdquirente = Math.Round(Valor * Taxa.Percentual, 2);
+            ValorLojista = Math.Round((Valor - ValorAdquirente), 2);
         }
 
         public string DescricaoRetorno

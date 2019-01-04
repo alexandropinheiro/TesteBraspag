@@ -1,6 +1,5 @@
 ﻿using Api.AuthenticateUtils;
 using Api.Models;
-using log4net.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

@@ -1,4 +1,4 @@
-﻿using Dominio.Aliquota;
+﻿using Dominio.Bandeiras;
 using Infra.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

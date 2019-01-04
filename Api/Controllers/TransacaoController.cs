@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Api.ViewModels;
 using Dominio.Operacao;
-using Dominio.Aliquota;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using log4net;
-using System.Reflection;
 using Dominio;
+using Dominio.Taxas;
 
 namespace Api.Controllers
 {

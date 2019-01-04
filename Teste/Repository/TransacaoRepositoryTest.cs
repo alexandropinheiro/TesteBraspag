@@ -1,6 +1,8 @@
 ﻿using Dominio;
-using Dominio.Aliquota;
+using Dominio.Adquirentes;
+using Dominio.Bandeiras;
 using Dominio.Operacao;
+using Dominio.Taxas;
 using Infra.Repository;
 using Repository;
 using System.Linq;
@@ -50,6 +52,9 @@ namespace Teste.Repository
 
             Assert.Equal("Cartão: 1234123412341234; Valor Lojista: R$ 179,87; Valor Adquirente: R$ 0,13.", 
                           itemTransacao.DescricaoRetorno);
+
+            _repositoryTransacao.Gravar(transacao);
+            _uow.Commit();
             #endregion
         }
 

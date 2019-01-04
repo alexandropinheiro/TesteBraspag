@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Api.ViewModel
+﻿namespace Api.ViewModel
 {
     public class TaxaViewModel
     {
